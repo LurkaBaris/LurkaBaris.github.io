@@ -1,0 +1,421 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Roboto,sans-serif;
+    background-color: #2F343A;
+    color: #FFFFFF;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.section-title {
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn {
+    width: 220px;
+    height: 55px;
+    font-family: Roboto,sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: none;
+    background-color: #C8A35F;
+}
+
+.block {
+    width: 90px;
+    height: 6px;
+    margin-bottom: 40px;
+    background-color: #C8A35F;
+}
+/*header*/
+/*cap*/
+.cap {
+    margin-bottom: 27px;
+    padding: 16px;
+    font-size: 12px;
+    background-color: #C8A35F;
+    text-align: center;
+}
+
+.capItem {
+    display: inline-block;
+}
+
+.capLang {
+    float: left;
+}
+
+.langItem {
+    padding-right: 10px;
+    opacity: 0.5;
+}
+
+.langCheck {
+    opacity: 1;
+}
+
+.langItem:hover {
+    opacity: 1;
+    transition: 0.8s ease all;
+}
+
+.langItem:last-child {
+    padding-right: 0;
+}
+
+.capEmail {
+    float: right;
+}
+/*cap*/
+
+/*nav*/
+.nav {
+    padding-bottom: 27px;
+}
+
+.navLeft {
+    float: left;
+}
+
+.navRight {
+    float: right;
+    padding-top: 15px; /* я походу забыл как это грамотно центрировать и сделал так, но я пока в разработке)*/
+}
+
+.navItem {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.navItem:last-child {
+    padding-right: 0;
+}
+
+.navItemLink {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.place {
+    padding-right: 10px;
+}
+
+.navLeft .navItemLink {
+    text-transform: none;
+}
+
+.navLeft .navItem:first-child {
+    border-right: 1px solid #F2F2F2;
+}
+/*nav*/
+/*headerContent*/
+.headerContent {
+    padding-bottom: 50px;
+    text-align: center;
+    background-image: url("../img/headerBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.headerContentContainer {
+    width: 920px;
+    margin: 0 auto;
+    padding-bottom: 140px;
+    padding-top: 155px; /*тоже чет не допер как сделать лучше*/
+}
+
+.headerContentTitle {
+    border: 1px solid #C8A35F;
+}
+
+.headerTitle {
+    margin: 45px;
+    font-size: 64px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.headerSubTitle {
+    margin: 0 auto;
+    margin-bottom: 45px;
+    max-width: 730px;
+    font-size: 18px;
+}
+/*headerContent*/
+/*header*/
+
+/*section.europe */
+.europe {
+    padding-bottom: 120px;
+    margin-bottom: 120px;
+    padding-top: 120px; /* для того,чтобы градиент работал*/
+    background: linear-gradient(
+            to right,
+            #393F47 0%,
+            #393F47 38%,
+            #2F343A 38%,
+            #2F343A 61%,
+            #393F47 61%,
+            #393F47 100%
+    )
+    0% 100%;
+}
+
+.europeItem {
+    display: inline-block;
+}
+
+.europeItem:last-child {
+    padding-top: 30px; /*!*/
+    float: right;
+}
+
+.europeItem .section-title {
+    max-width: 219px;
+}
+
+.subTitle {
+    padding-bottom: 50px;
+    max-width: 320px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.track {
+    padding-right: 20px;
+}
+
+.europePanel {
+    display: inline-block;
+    float: right;
+    font-weight: 500;
+    font-size: 16px;
+    color: #C8A35F;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.europePanelItem {
+    padding-bottom: 245px;
+}
+
+.europePanelItem:last-child {
+    padding-bottom: 0;
+}
+
+.arrowRight {
+    padding-left: 31px;
+}
+
+.arrowLeft {
+    padding-right: 31px;
+}
+/*section.europe */
+
+/*section.services*/
+.servicesAbout {
+    padding-bottom: 202px;
+}
+
+.services {
+    padding-bottom: 200px;
+}
+
+.services .section-title {
+    padding-bottom: 60px;
+}
+
+.servicesItem {
+    display: inline-block;
+    padding: 35px 57px;
+    margin-left: -.36em;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    border: 1px solid #2F343A;
+    background-color: #393F47;
+    transition: 0.4s ease background-color;
+}
+
+.servicesLogo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 23px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+.servicesLogo:before {
+    display: inline-block;
+    padding-top: 100%;
+    content: "";
+    vertical-align: middle;
+}
+
+.servicesItem:hover {
+    background-color: #C8A35F;
+    transition: 0.9s ease all;
+}
+
+.servicesItem:hover .servicesLogo {
+    background: #fff;
+    transition: 0.9s ease all;
+}
+
+.servicesItem:hover .servicesImg {
+    filter: invert(1);
+    transition: 0.9s ease all;
+}
+
+/*section.services*/
+
+/*section.about*/
+.about {
+    position: relative;
+}
+
+.aboutParagraph {
+    max-width: 460px;
+    line-height: 23px;
+}
+
+.aboutBlock {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    width: 410px;
+    height: 482px;
+    background: #393F47;
+}
+
+.aboutContent {
+    display: inline-block;
+}
+
+.aboutContainer {
+    float: right;
+    max-width: 601px;
+    font-size: 0;
+}
+
+.aboutItem {
+    display: inline-block;
+    margin-bottom: -.10rem;
+    vertical-align: middle;
+    border: 0.15px solid #C8A35F;
+}
+
+.aboutItem:first-child,
+.aboutItem:nth-child(2),
+.aboutItem:nth-child(4),
+.aboutItem:nth-child(5){
+    border-right: none;
+}
+
+.aboutItem:first-child,
+.aboutItem:nth-child(2) {
+    border-bottom: none;
+}
+
+.aboutItemText {
+    width: 200px;
+    height: 160px;
+    font-size: 18px;
+    color: #000000;
+    text-align: center;
+    background-color: #fff;
+}
+
+.aboutNumber {
+    padding-bottom: 10px;
+    margin-top: 23px;
+    font-size: 64px;
+    color: #2F343A;
+    font-weight: bold;
+}
+
+.aboutSubtitle {
+    padding-bottom: 15px;
+}
+
+.aboutWho {
+    font-size: 12px;
+}
+/*section.about*/
+
+/*div.map*/
+.map iframe {
+    width:100%;
+    height:450px;
+}
+/*div.map*/
+
+/*footer*/
+.footerMain {
+    padding: 60px;
+    font-size: 14px;
+    color: #F2F2F2;
+    background-color: #C8A35F;
+}
+
+.footerLogo {
+    display: inline-block;
+    padding-right: 30px;
+}
+
+.footerDark {
+    color: #2F343A;
+}
+
+.footerColumn {
+    padding-right: 89px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footerColumn:nth-child(3){
+    padding-right: 213px;
+}
+
+.footerColumn:last-child {
+    padding-right: 0;
+    vertical-align: bottom;
+}
+
+.footerListItem {
+    padding-bottom: 10px;
+}
+
+.footerListItem:last-child {
+    padding-bottom: 0;
+}
+
+.footerLink {
+    color: #2F343A;
+}
+/*footer*/
