@@ -1,112 +1,21 @@
-@media (max-width: 1199px) {
-    .storyPhoto {
+@media (max-width: 1216px) {
+    .achievementsItem:last-child {
+        border-top: 1px solid #fff;
+        border-right: none;
+    }
+    .servicesItem:nth-child(4) {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .services-container .row .flexItem {
+        justify-content: space-around;
+    }
+    .blog .row .flexItem {
+        justify-content: space-around;
+    }
+    .footer-container .row .flexItem {
         justify-content: space-around;
     }
 }
 @media (max-width: 991px) {
-    /*
-    .navItem {
-        padding-right: 0;
-        padding-bottom: 20px;
-    }
-    .navItem:first-child {
-        margin-right: 0;
-        margin-bottom: 20px;
-        font-size: 45px;
-    }*/
-    .visible-lg {
-      /*  display: none;*/
-    }
 
-    .menuLink {
-        display: flex;
-    }
-
-    .section-subTitle {
-        font-size: 20px;
-    }
-
-    .section-title {
-        font-size: 25px;
-    }
-
-    .section-paragraph {
-        font-size: 13px;
-    }
-
-    .headerTitle {
-        font-size: 100px;
-    }
-
-    .listItem {
-        width: 220px;
-    }
-
-    .storyPhoto {
-        justify-content: space-around;
-    }
-
-    .deed-container {
-        justify-content: space-around;
-    }
-
-    .deedItem .servicesItemTitle {
-        width: 357px;
-        font-size: 10px;
-    }
-
-    .deed-paragraph {
-        max-width: 357px;
-        font-size: 12px;
-    }
-
-    .quote {
-        width: 844px;
-    }
-
-    .quoteParagraph {
-        font-size: 20px;
-        max-width: 515px;
-    }
-
-    .quoteBy {
-        font-size: 20px;
-    }
-
-    .teamPhoto {
-        flex-flow: wrap;
-        justify-content: space-around;
-        height: 1300px;
-    }
-
-    .brand-container {
-        justify-content: space-around;
-    }
-
-    .workPhoto {
-        flex-flow: wrap;
-    }
-
-    .wordsPeople {
-        max-width: 503px;
-    }
-
-    .wordsPeopleItem:nth-child(3) {
-        padding-bottom: 70px;
-    }
-
-    .blog-container {
-        flex-flow: wrap;
-        justify-content: space-around;
-    }
-    .blogItem:first-child {
-        padding-bottom: 40px;
-    }
-    .footer-container {
-        justify-content: space-around;
-        flex-flow: wrap;
-    }
-    .footerItem:first-child {
-        padding-bottom: 50px;
-    }
 }
