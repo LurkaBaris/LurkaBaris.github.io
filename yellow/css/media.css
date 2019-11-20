@@ -32,7 +32,7 @@
         width: 100%;
     }
 
-    *:not(.artItem) {
+    *:not(.footerContainer) {
         max-width: 100%;
     }
 }
@@ -58,7 +58,9 @@
     .brand .col-xs-4:nth-child(6) {
         margin-bottom: 0;
     }
-
+    .copyright {
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 627px) {
