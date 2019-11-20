@@ -290,8 +290,6 @@ html {
 }
 .footerNav {
     margin-left: auto;
-    display: flex;
-    justify-content: flex-end;
 }
 .footerLink {
     padding-right: 22px;
