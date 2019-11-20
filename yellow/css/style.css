@@ -204,11 +204,13 @@ html {
     background-color: #424245;
     margin-bottom: 115px;
 }
+
 .clients .section-title {
     color: #fff;
 }
+
 .brand {
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 /*section.clients*/
@@ -275,7 +277,7 @@ html {
 }
 
 .footerContainer {
-    max-width: 1160px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
