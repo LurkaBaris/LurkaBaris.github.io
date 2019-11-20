@@ -31,7 +31,8 @@
     .contactInput {
         width: 100%;
     }
-    *:not(.artItem) {
+
+    *:not(.artItem, .contactInput) {
         max-width: 100%;
     }
 
