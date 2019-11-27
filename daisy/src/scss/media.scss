@@ -1,0 +1,167 @@
+@media (max-width: 1023px) {
+  .receive__item:nth-child(1) {
+    margin-bottom: 40px;
+  }
+  .works__description:nth-child(1),
+  .works__description:nth-child(3){
+    margin-bottom: 50px;
+  }
+  .works__description:nth-child(2) {
+    margin-top: 50px;
+  }
+  .nav__item:nth-child(3):after,
+  .nav__item:nth-child(4):after{
+      content: none;
+  }
+  .portfolio__hover {
+    width: 98.2%;
+  }
+  .portfolio__hover-bg_w {
+    width: 94%;
+  }
+  .portfolio__photo:nth-child(4),
+  .portfolio__photo:nth-child(5)
+  {
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 987px) {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .header-main__button:after {
+    content: none;
+  }
+  .nav__item:after {
+    content: none;
+  }
+}
+@media (max-width: 970px) {
+  .business__content {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 857px) {
+  .process__container_visible {
+    display: none;
+  }
+  .process__container_visible-lg {
+    display: block;
+  }
+  .process__sub-title {
+    margin-bottom: 40px;
+  }
+  .process__container {
+    position: static;
+    height: auto;
+  }
+  .process__item {
+    position: relative;
+    margin-bottom: 40px;
+    background-size: auto;
+    background-position: center;
+  }
+  .process__step2{
+    top: 0;
+    left: 0;
+  }
+  .process__step3{
+    top: 0;
+    right: 0;
+  }
+  .process__step4 {
+    top: 0;
+    right: 0;
+  }
+  .process__step-img{
+    top: 0;
+    left: 0;
+    background-image: url("../img/process/process__step_vahue_media.png");
+  }
+  .process__img_p1{
+    top: 18%;
+    left: 14%;
+  }
+  .process__img_p2 {
+    top: 22%;
+    left: 14%;
+  }
+  .process__img_p3 {
+    bottom: -3%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-main__item_visible {
+    display: none;
+  }
+
+  .nav-main__logo {
+    margin-right: 0;
+  }
+  .header-main__sub-title {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 42px;
+  }
+  .title__block_left {
+    margin-left: 20px;
+  }
+  .title__block_right {
+    margin-right: 20px;
+  }
+  .receive__item {
+    margin-bottom: 40px;
+  }
+  .process__img_p1{
+    top: 18%;
+    left: 27%;
+  }
+  .process__img_p2 {
+    top: 21%;
+    left: 30%;
+  }
+  .nav__item:nth-child(1):after {
+    content: none;
+  }
+  .portfolio__hover-bg_w {
+    width: 97%;
+  }
+  .team__item:nth-child(1),
+  .team__item:nth-child(2), {
+    margin-bottom: 50px;
+  }
+  .team__paragraph {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .burger-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 710px) {
+  .process__img_p1 {
+    display: none;
+  }
+  .process__img_p2 {
+    display: none;
+  }
+}
+
+@media (max-width: 565px) {
+  .burger-menu__nav {
+    .nav-main__link {
+      font-size: 20px;
+    }
+  }
+}
