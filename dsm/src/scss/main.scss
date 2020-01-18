@@ -21,6 +21,7 @@
   border: none;
   border-radius: 5px;
   box-shadow: -1px 9px 9px -4px rgba(0, 0, 0, 0.75);
+  transition: 0.4s ease all;
 
   &_white {
     margin-right: 0;
@@ -29,7 +30,18 @@
     color: #061e37;
     background-color: #ffffff;
   }
+
+  &_white:hover {
+    background-color: #c5c5c5;
+    transition: 0.4s ease all;
+  }
 }
+
+.btn_dark:hover {
+  background-color: #102F37;
+  transition: 0.4s ease all;
+}
+
 
 .title {
   font-family: 'Raleway', sans-serif;
@@ -208,6 +220,7 @@
     justify-content: center;
     align-items: center;
     width: 600px;
+    height: 320px;
     border: 1px solid #061e37;
     border-radius: 5px;
     background-image: url("../img/header/header__video.png");
@@ -222,7 +235,6 @@
     justify-content: center;
     width: 60px;
     height: 60px;
-    margin-top: 115px;
     margin-bottom: 21px;
     border-radius: 5px;
     background-color: #061e37;
@@ -236,7 +248,6 @@
   }
 
   &__video-title {
-    margin-bottom: 111px;
     font-family: 'Raleway', sans-serif;
     font-size: 12px;
     font-weight: 700;
@@ -308,6 +319,12 @@
     border: none;
     border-radius: 5px;
     box-shadow: -1px 9px 9px -4px rgba(0, 0, 0, 0.75);
+    transition: 0.4s ease all;
+  }
+
+  &__btn:hover {
+    background-color: #1d986d;
+    transition: 0.4s ease all;
   }
 }
 
@@ -327,19 +344,19 @@
     width: 100%;
   }
 
-  &__item_bg-first {
+  &__item_blue {
     background-color: #80d8ff;
   }
 
-  &__item_bg-second {
+  &__item_dark-blue {
     background-color: #82b1ff;
   }
 
-  &__item_bg-third {
+  &__item_violet {
     background-color: #b388ff;
   }
 
-  &__item_bg-fourth {
+  &__item_pink {
     background-color: #ea80fc;
   }
 
@@ -738,8 +755,8 @@
   &__mark:after {
     content: "";
     display: none;
-    width: 5px;
-    height: 10px;
+    width: 3px;
+    height: 6px;
     border: solid black;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
@@ -765,6 +782,12 @@
     font-size: 16px;
     color: #fff;
     text-transform: uppercase;
+    transition: 0.4s ease all;
+  }
+
+  &__btn:hover {
+    background-color: #1de9b6;
+    transition: 0.4s ease all;
   }
 }
 

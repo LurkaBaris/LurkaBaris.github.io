@@ -2,7 +2,12 @@
 let boxes = document.getElementsByClassName('services__item');
 for (let box of boxes) {
     $(box.children[1]).hide();
-    $(box).click(function () {
+    $(box).click(function (event) {
+        for (let boxU of boxes) {
+            if (boxU.children[1].style.display === "flex" && $(boxes).index(boxU) !== $(boxes).index(box)) {
+                $(boxU.children[1]).slideToggle();
+            }
+        }
         let t = box.children[1];
         $(t).slideToggle();
     })
@@ -56,7 +61,7 @@ function changeImg() {
 
 /*burger menu*/
 $('.nav__burger-icon').click(function () {
-    $('.nav__burger-menu').show(0,function () {
+    $('.nav__burger-menu').show(0, function () {
         $('.nav__burger-menu').toggleClass('nav__burger-menu_active');
     }).removeAttr('style');
     document.body.style.overflow = 'hidden';
