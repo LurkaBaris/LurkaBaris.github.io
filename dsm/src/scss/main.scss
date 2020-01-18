@@ -757,7 +757,7 @@
     display: none;
     width: 3px;
     height: 6px;
-    border: solid black;
+    border: solid #000;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
   }
@@ -786,7 +786,7 @@
   }
 
   &__btn:hover {
-    background-color: #1de9b6;
+    background-color: #061e37;
     transition: 0.4s ease all;
   }
 }
