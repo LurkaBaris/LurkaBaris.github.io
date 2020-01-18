@@ -148,7 +148,12 @@ function onPageLoaded() {
                 if (eventBtn.which == keyEnter) {
                     todoArr.forEach((value, index) => {
                         if (value.title === oldValue) {
-                            value.title = eventBtn.target.value;
+                            let newValue = eventBtn.target.value;
+                            if (newValue.length >23) {
+                                newValue = newValue.slice(0,23) + "...";
+                            }
+
+                            value.title = newValue;
                         }
                     });
 
@@ -158,9 +163,12 @@ function onPageLoaded() {
                     });
 
                     element.nextElementSibling.classList.toggle("todos__delete_display");
-
+                    let newValue = eventBtn.target.value;
+                    if (newValue.length >23) {
+                        newValue = newValue.slice(0,23) + "...";
+                    }
                     localStorage.setItem('todos', strTitle);
-                    element.previousElementSibling.innerHTML = eventBtn.target.value;
+                    element.previousElementSibling.innerHTML = newValue;
                 }
             });
             element.previousElementSibling.append(editInput);
