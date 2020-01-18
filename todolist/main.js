@@ -1,9 +1,11 @@
+let todoArr = [];
+
 function onPageLoaded() {
     let input = document.querySelector('.todo__add');
     let ul = document.querySelector('.todos');
 
-    let saveBtn = document.querySelector(".save");
     let clearBtn = document.querySelector(".clear");
+
 
     let svg = "<svg class=\"todos__svg\"\n" +
         "                enable-background=\"new 0 0 91 91\"  id=\"Layer_1\" version=\"1.1\" viewBox=\"0 0 91 91\"\n" +
@@ -18,10 +20,16 @@ function onPageLoaded() {
         let li = document.createElement('li');
         let text = document.createElement("span");
         text.className = "todos__text";
+        if (input.value == "" || input.value.trim() == '' || input.value == ",") {
+            return;
+        }
         let newTodo = input.value;
+        if (newTodo.length > 20) {
+            newTodo = newTodo.slice(0, 20) + "...";
+        }
         text.append(newTodo);
 
-        const deleteBtn = document.createElement('span');
+        let deleteBtn = document.createElement('span');
         deleteBtn.className = "todos__delete";
         deleteBtn.innerHTML = svg;
 
@@ -30,6 +38,20 @@ function onPageLoaded() {
         input.value = "";
 
         deleteTodo(deleteBtn);
+
+        todoArr.push({
+            title: newTodo,
+            checked: false
+        });
+        let strTitle = [];
+        let strChecked = [];
+        todoArr.forEach(value => {
+            strTitle.push(value.title);
+            strChecked.push(value.checked);
+        });
+
+        localStorage.setItem("todos", strTitle);
+        localStorage.setItem("checked", strChecked);
     }
 
     input.addEventListener("keypress", function (event) {
@@ -41,44 +63,106 @@ function onPageLoaded() {
 
     function deleteTodo(element) {
         element.addEventListener("click", function (event) {
+            let strTitle = [];
+            let strChecked = [];
+            todoArr.forEach(function (item, index, obj) {
+                if (item.title === element.previousElementSibling.innerHTML) {
+                    obj.splice(index, 1);
+                }
+            });
+
+            todoArr.forEach(value => {
+                strTitle.push(value.title);
+                strChecked.push(value.checked);
+            });
             element.parentElement.remove();
+            localStorage.setItem('todos', strTitle);
+            localStorage.setItem("checked", strChecked);
             event.stopPropagation();
         })
     }
 
     function onClickTodo(event) {
         if (event.target.tagName === "LI") {
-            event.target.classList.toggle("checked");
+            todoArr.forEach(value => {
+                if (value.title === event.target.firstElementChild.innerHTML) {
+                    value.checked = event.target.classList.toggle("checked");
+                }
+            });
+            let strTitle = [];
+            let strChecked = [];
+            todoArr.forEach(value => {
+                strTitle.push(value.title);
+                strChecked.push(value.checked);
+            });
+            localStorage.setItem('todos', strTitle);
+            localStorage.setItem("checked", strChecked);
         }
         if (event.target.className === "todos__text") {
-            event.target.parentElement.classList.toggle("checked");
+            todoArr.forEach(value => {
+                if (value.title === event.target.innerHTML) {
+                    value.checked = event.target.parentElement.classList.toggle("checked");
+                }
+            });
+            let strTitle = [];
+            let strChecked = [];
+            todoArr.forEach(value => {
+                strTitle.push(value.title);
+                strChecked.push(value.checked);
+            });
+            localStorage.setItem('todos', strTitle);
+            localStorage.setItem("checked", strChecked);
         }
     }
 
     function loadTodos() {
         let data = localStorage.getItem("todos");
+        let dataCheck = localStorage.getItem("checked");
         if (data) {
-            ul.innerHTML = data;
-        }
-        let deleteBtns = document.querySelectorAll(".todos__delete");
-        for (let btn of deleteBtns) {
-            deleteTodo(btn);
+            {
+                let arr = data.split(',');
+                for (let item of arr) {
+                    let li = document.createElement('li');
+                    let text = document.createElement("span");
+                    text.className = "todos__text";
+                    text.append(item);
+
+                    let deleteBtn = document.createElement('span');
+                    deleteBtn.className = "todos__delete";
+                    deleteBtn.innerHTML = svg;
+                    deleteTodo(deleteBtn);
+
+                    ul.appendChild(li).append(text, deleteBtn);
+                    todoArr.push({
+                        title: item
+                    })
+                }
+                let arrCheck = dataCheck.split(',');
+                arrCheck.forEach((value, index) => {
+                    let lies = document.getElementsByClassName("todos__text");
+                    if (value === "true") {
+                        lies[index].parentElement.className = "checked";
+                        todoArr[index].checked = "true";
+                    }
+                    if (value === "false") {
+                        todoArr[index].checked = "false";
+                    }
+                })
+            }
         }
     }
 
     ul.addEventListener("click", onClickTodo);
 
-    saveBtn.addEventListener('click', function () {
-        localStorage.setItem("todos", ul.innerHTML);
-    });
-
     clearBtn.addEventListener('click', function () {
+        todoArr = [];
         ul.innerHTML = "";
-        localStorage.removeItem('todos', ul.innerHTML);
+        localStorage.removeItem('todos');
+        localStorage.removeItem("checked");
     });
 
     loadTodos();
 }
 
-document.addEventListener('DOMContentLoaded', onPageLoaded);
 
+document.addEventListener('DOMContentLoaded', onPageLoaded);
