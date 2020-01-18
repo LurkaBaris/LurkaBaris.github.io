@@ -28,7 +28,7 @@
     flex-direction: column;
     margin: 0 auto;
     margin-top: 100px;
-    width: 250px;
+    width: 450px;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 0px 54px -10px rgba(0, 0, 0, 0.75);
@@ -77,6 +77,27 @@
     margin-bottom: 20px;
 }
 
-.checked {
+.todos__text {
+    max-width: 280px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.checked .todos__text {
     text-decoration: line-through;
+}
+
+.full {
+    margin-left: 2px;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.full-active {
+    content: "";
+    word-break: break-word;
+    white-space: normal;
 }
