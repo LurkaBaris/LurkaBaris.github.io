@@ -6,7 +6,21 @@
 
 .todos__delete {
     cursor: pointer;
-    margin-right: 5px;
+    margin-left: auto;
+}
+
+.todos__delete_display {
+    display: none;
+}
+
+.todos__svg_update {
+    width: 13px;
+    height: 13px;
+}
+
+.todos__update {
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 .todo {
@@ -41,13 +55,14 @@
     text-align: left;
     margin-bottom: 50px;
 }
+
 .todos li {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-left: 10px;
     cursor: pointer;
 }
+
 .btn {
     height: 30px;
     width: 50px;

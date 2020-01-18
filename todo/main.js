@@ -15,6 +15,51 @@ function onPageLoaded() {
         "                fill=\"#95AEC2\"/><rect fill=\"#6EC4A7\" height=\"9.438\" width=\"66.611\" x=\"12.056\" y=\"14.479\"/><rect\n" +
         "                fill=\"#647F94\" height=\"7.887\" width=\"18.205\" x=\"36.259\" y=\"0.99\"/></g></g></svg>";
 
+    let svgEdit = "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n" +
+        "<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->\n" +
+        "<svg class=\"todos__svg_update\" version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n" +
+        "\t viewBox=\"0 0 383.947 383.947\" style=\"enable-background:new 0 0 383.947 383.947;\" xml:space=\"preserve\">\n" +
+        "<g>\n" +
+        "\t<g>\n" +
+        "\t\t<g>\n" +
+        "\t\t\t<polygon points=\"0,303.947 0,383.947 80,383.947 316.053,147.893 236.053,67.893 \t\t\t\"/>\n" +
+        "\t\t\t<path d=\"M377.707,56.053L327.893,6.24c-8.32-8.32-21.867-8.32-30.187,0l-39.04,39.04l80,80l39.04-39.04\n" +
+        "\t\t\t\tC386.027,77.92,386.027,64.373,377.707,56.053z\"/>\n" +
+        "\t\t</g>\n" +
+        "\t</g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "<g>\n" +
+        "</g>\n" +
+        "</svg>\n";
+
 
     function createTodo() {
         let li = document.createElement('li');
@@ -24,17 +69,24 @@ function onPageLoaded() {
             return;
         }
         let newTodo = input.value;
-        if (newTodo.length > 20) {
-            newTodo = newTodo.slice(0, 20) + "...";
+        if (newTodo.length > 23) {
+            newTodo = newTodo.slice(0, 23) + "...";
         }
         text.append(newTodo);
+
 
         let deleteBtn = document.createElement('span');
         deleteBtn.className = "todos__delete";
         deleteBtn.innerHTML = svg;
 
 
-        ul.appendChild(li).append(text, deleteBtn);
+        let updateBtn = document.createElement("span");
+        updateBtn.className = "todos__update";
+        updateBtn.innerHTML = svgEdit;
+
+        editTodo(updateBtn);
+
+        ul.appendChild(li).append(text, updateBtn, deleteBtn);
         input.value = "";
 
         deleteTodo(deleteBtn);
@@ -66,7 +118,7 @@ function onPageLoaded() {
             let strTitle = [];
             let strChecked = [];
             todoArr.forEach(function (item, index, obj) {
-                if (item.title === element.previousElementSibling.innerHTML) {
+                if (item.title === element.previousElementSibling.previousElementSibling.innerHTML) {
                     obj.splice(index, 1);
                 }
             });
@@ -81,6 +133,40 @@ function onPageLoaded() {
             event.stopPropagation();
         })
     }
+
+    function editTodo(element) {
+        element.addEventListener("click", function (event) {
+            let editInput = document.createElement("input");
+            let oldValue = element.previousElementSibling.innerHTML;
+            editInput.value = oldValue;
+            element.previousElementSibling.innerHTML = "";
+
+            element.nextElementSibling.classList.toggle("todos__delete_display");
+
+            editInput.addEventListener("keypress", function (eventBtn) {
+                let keyEnter = 13;
+                if (eventBtn.which == keyEnter) {
+                    todoArr.forEach((value, index) => {
+                        if (value.title === oldValue) {
+                            value.title = eventBtn.target.value;
+                        }
+                    });
+
+                    let strTitle = [];
+                    todoArr.forEach(value => {
+                       strTitle.push(value.title);
+                    });
+
+                    element.nextElementSibling.classList.toggle("todos__delete_display");
+
+                    localStorage.setItem('todos', strTitle);
+                    element.previousElementSibling.innerHTML = eventBtn.target.value;
+                }
+            });
+            element.previousElementSibling.append(editInput);
+        })
+    }
+
 
     function onClickTodo(event) {
         if (event.target.tagName === "LI") {
@@ -132,7 +218,13 @@ function onPageLoaded() {
                     deleteBtn.innerHTML = svg;
                     deleteTodo(deleteBtn);
 
-                    ul.appendChild(li).append(text, deleteBtn);
+
+                    let updateBtn = document.createElement("span");
+                    updateBtn.className = "todos__update";
+                    updateBtn.innerHTML = svgEdit;
+                    editTodo(updateBtn);
+
+                    ul.appendChild(li).append(text, updateBtn, deleteBtn);
                     todoArr.push({
                         title: item
                     })
