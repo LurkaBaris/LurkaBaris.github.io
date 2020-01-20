@@ -12,7 +12,7 @@ function onPageLoaded() {
 
 
     function createTodo() {
-        if (input.value == "" || input.value.trim() == '' || input.value == ",") {
+        if (input.value.trim().length === 0 || input.value === ",") {
             return;
         }
         let li = document.createElement('li');
@@ -82,23 +82,43 @@ function onPageLoaded() {
     }
 
     function editTodo(element) {
-        element.addEventListener("click", function (event) {
+        element.addEventListener("click", function edit(event) {
             let editInput = document.createElement("input");
             let oldValue = element.parentNode.firstElementChild.innerHTML;
             editInput.value = oldValue;
             element.parentNode.firstElementChild.innerHTML = "";
 
             element.nextElementSibling.classList.toggle("todos__delete_display");
+            element.firstElementChild.src = "img/exit.png";
+
+
+
+
+            element.parentNode.firstElementChild.append(editInput);
+            element.removeEventListener("click",edit);
+            element.addEventListener('click', exitEdit);
+            function exitEdit() {
+                element.parentNode.firstElementChild.innerHTML = oldValue;
+                editInput.remove();
+                element.nextElementSibling.classList.toggle("todos__delete_display");
+                element.firstElementChild.src = "img/edit.png";
+                element.removeEventListener('click',exitEdit);
+                element.addEventListener('click',edit);
+            }
 
             editInput.addEventListener("keypress", function (eventBtn) {
                 let keyEnter = 13;
                 if (eventBtn.which == keyEnter) {
+                    if (eventBtn.target.value.trim().length === 0 || eventBtn.target.value === ",") {
+                        return;
+                    }
+                    element.firstElementChild.src = "img/edit.png";
+
                     todoArr.forEach((value, index) => {
                         if (value.title === oldValue) {
                             value.title = eventBtn.target.value;
                         }
                     });
-
                     let strTitle = [];
                     todoArr.forEach(value => {
                         strTitle.push(value.title);
@@ -110,7 +130,7 @@ function onPageLoaded() {
                     element.parentNode.firstElementChild.innerHTML = newValue;
                 }
             });
-            element.parentNode.firstElementChild.append(editInput);
+
         })
     }
 
@@ -230,10 +250,6 @@ function onPageLoaded() {
             }
         }
     }
-
-
-
-
 
     loadTodos();
     showAll();
