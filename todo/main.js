@@ -91,9 +91,6 @@ function onPageLoaded() {
             element.nextElementSibling.classList.toggle("todos__delete_display");
             element.firstElementChild.src = "img/exit.png";
 
-
-
-
             element.parentNode.firstElementChild.append(editInput);
             element.removeEventListener("click",edit);
             element.addEventListener('click', exitEdit);
@@ -112,7 +109,9 @@ function onPageLoaded() {
                     if (eventBtn.target.value.trim().length === 0 || eventBtn.target.value === ",") {
                         return;
                     }
+
                     element.firstElementChild.src = "img/edit.png";
+                    element.removeEventListener('click',exitEdit);
 
                     todoArr.forEach((value, index) => {
                         if (value.title === oldValue) {
@@ -123,7 +122,7 @@ function onPageLoaded() {
                     todoArr.forEach(value => {
                         strTitle.push(value.title);
                     });
-
+                    element.addEventListener('click',edit);
                     element.nextElementSibling.classList.toggle("todos__delete_display");
                     let newValue = eventBtn.target.value;
                     localStorage.setItem('todos', strTitle);
