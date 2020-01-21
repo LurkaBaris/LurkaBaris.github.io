@@ -41,14 +41,39 @@
     text-transform: uppercase;
 }
 
+.todo__form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.error {
+    position: absolute;
+    display: none;
+    top: -40px;
+    left: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 35px;
+    font-size: 12px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px 0px rgba(0, 255, 242, 0.75);
+}
+
+.error-active {
+    display: flex;
+}
+
 .todo__add {
     height: 25px;
     padding: 0 11px;
     font-size: 14px;
-    margin-bottom: 20px;
     color: #061e37;
     font-weight: 600;
     border: 1px solid #061e37;
+    margin-bottom: 20px;
 }
 
 .todos {
@@ -101,3 +126,4 @@
     word-break: break-word;
     white-space: normal;
 }
+

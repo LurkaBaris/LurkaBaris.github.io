@@ -12,9 +12,19 @@ function onPageLoaded() {
 
 
     function createTodo() {
+        todoArr.forEach(value => {
+            if (value.title.toLowerCase() === input.value.toLowerCase()) {
+                input.value = "";
+                let validator = document.querySelector('.error');
+                validator.classList.add("error-active");
+            }
+        });
+
         if (input.value.trim().length === 0 || input.value === ",") {
             return;
         }
+
+
         let li = document.createElement('li');
         let text = document.createElement("span");
         text.className = "todos__text";
@@ -25,32 +35,27 @@ function onPageLoaded() {
         let deleteBtn = document.createElement('span');
         deleteBtn.className = "todos__delete";
         deleteBtn.innerHTML = svg;
-
+        deleteBtn.addEventListener('click', () => deleteTodo(deleteBtn));
 
         let updateBtn = document.createElement("span");
         updateBtn.className = "todos__update";
         updateBtn.innerHTML = svgEdit;
-
         editTodo(updateBtn);
 
         ul.appendChild(li).append(text, updateBtn, deleteBtn);
         input.value = "";
 
-        deleteTodo(deleteBtn);
 
         todoArr.push({
             title: newTodo,
             checked: false
         });
-        let strTitle = [];
-        let strChecked = [];
-        todoArr.forEach(value => {
-            strTitle.push(value.title);
-            strChecked.push(value.checked);
-        });
+
+        let json = JSON.stringify(todoArr);
+
         showAll();
-        localStorage.setItem("todos", strTitle);
-        localStorage.setItem("checked", strChecked);
+
+        localStorage.setItem("todos", json);
     }
 
     input.addEventListener("keypress", function (event) {
@@ -60,25 +65,28 @@ function onPageLoaded() {
         }
     });
 
-    function deleteTodo(element) {
-        element.addEventListener("click", function (event) {
-            let strTitle = [];
-            let strChecked = [];
-            todoArr.forEach(function (item, index, obj) {
-                if (item.title === element.parentNode.firstElementChild.innerHTML) {
-                    obj.splice(index, 1);
-                }
-            });
+    input.addEventListener("blur", function () {
+        let validator = document.querySelector('.error');
+        validator.classList.remove("error-active");
+    });
 
-            todoArr.forEach(value => {
-                strTitle.push(value.title);
-                strChecked.push(value.checked);
-            });
-            element.parentElement.remove();
-            localStorage.setItem('todos', strTitle);
-            localStorage.setItem("checked", strChecked);
-            event.stopPropagation();
-        })
+    input.addEventListener("input", function () {
+        let validator = document.querySelector('.error');
+        validator.classList.remove("error-active");
+    });
+
+    function deleteTodo(element) {
+        todoArr.forEach(function (item, index, obj) {
+            if (item.title === element.parentNode.firstElementChild.innerHTML) {
+                obj.splice(index, 1);
+            }
+        });
+
+
+        let json = JSON.stringify(todoArr);
+
+        localStorage.setItem("todos", json);
+        element.parentElement.remove();
     }
 
     function editTodo(element) {
@@ -92,47 +100,53 @@ function onPageLoaded() {
             element.firstElementChild.src = "img/exit.png";
 
             element.parentNode.firstElementChild.append(editInput);
-            element.removeEventListener("click",edit);
+            element.removeEventListener("click", edit);
             element.addEventListener('click', exitEdit);
+
+
             function exitEdit() {
                 element.parentNode.firstElementChild.innerHTML = oldValue;
                 editInput.remove();
                 element.nextElementSibling.classList.toggle("todos__delete_display");
                 element.firstElementChild.src = "img/edit.png";
-                element.removeEventListener('click',exitEdit);
-                element.addEventListener('click',edit);
+                element.removeEventListener('click', exitEdit);
+                element.addEventListener('click', edit);
             }
 
+            editInput.focus();
             editInput.addEventListener("keypress", function (eventBtn) {
                 let keyEnter = 13;
                 if (eventBtn.which == keyEnter) {
-                    if (eventBtn.target.value.trim().length === 0 || eventBtn.target.value === ",") {
+                    todoArr.forEach(value => {
+                        if (value.title.toLowerCase() === eventBtn.target.value.toLowerCase()) {
+                            eventBtn.target.value = oldValue;
+                        }
+                    });
+
+                    if (eventBtn.target.value.trim().length === 0 || eventBtn.target.value === "," || eventBtn.target.value === oldValue) {
                         return;
                     }
 
+
                     element.firstElementChild.src = "img/edit.png";
-                    element.removeEventListener('click',exitEdit);
+                    element.removeEventListener('click', exitEdit);
 
                     todoArr.forEach((value, index) => {
                         if (value.title === oldValue) {
                             value.title = eventBtn.target.value;
                         }
                     });
-                    let strTitle = [];
-                    todoArr.forEach(value => {
-                        strTitle.push(value.title);
-                    });
-                    element.addEventListener('click',edit);
+                    let json = JSON.stringify(todoArr);
+                    element.addEventListener('click', edit);
                     element.nextElementSibling.classList.toggle("todos__delete_display");
                     let newValue = eventBtn.target.value;
-                    localStorage.setItem('todos', strTitle);
+                    localStorage.setItem('todos', json);
                     element.parentNode.firstElementChild.innerHTML = newValue;
                 }
             });
 
         })
     }
-
 
     function onClickTodo(event) {
         if (event.target.tagName === "LI") {
@@ -141,14 +155,8 @@ function onPageLoaded() {
                     value.checked = event.target.classList.toggle("checked");
                 }
             });
-            let strTitle = [];
-            let strChecked = [];
-            todoArr.forEach(value => {
-                strTitle.push(value.title);
-                strChecked.push(value.checked);
-            });
-            localStorage.setItem('todos', strTitle);
-            localStorage.setItem("checked", strChecked);
+            let json = JSON.stringify(todoArr);
+            localStorage.setItem("todos", json);
         }
         if (event.target.className === "todos__text") {
             todoArr.forEach(value => {
@@ -156,34 +164,25 @@ function onPageLoaded() {
                     value.checked = event.target.parentElement.classList.toggle("checked");
                 }
             });
-            let strTitle = [];
-            let strChecked = [];
-            todoArr.forEach(value => {
-                strTitle.push(value.title);
-                strChecked.push(value.checked);
-            });
-            localStorage.setItem('todos', strTitle);
-            localStorage.setItem("checked", strChecked);
+            let json = JSON.stringify(todoArr);
+            localStorage.setItem("todos", json);
         }
     }
 
     function loadTodos() {
-        let data = localStorage.getItem("todos");
-        let dataCheck = localStorage.getItem("checked");
+        let data = JSON.parse(localStorage.getItem("todos"));
         if (data) {
             {
-                let arr = data.split(',');
-                for (let item of arr) {
+                data.forEach((value) => {
                     let li = document.createElement('li');
                     let text = document.createElement("span");
                     text.className = "todos__text";
-                    text.append(item);
+                    text.append(value.title);
 
                     let deleteBtn = document.createElement('span');
                     deleteBtn.className = "todos__delete";
                     deleteBtn.innerHTML = svg;
-                    deleteTodo(deleteBtn);
-
+                    deleteBtn.addEventListener("click", () => deleteTodo(deleteBtn));
 
                     let updateBtn = document.createElement("span");
                     updateBtn.className = "todos__update";
@@ -191,21 +190,17 @@ function onPageLoaded() {
                     editTodo(updateBtn);
 
                     ul.appendChild(li).append(text, updateBtn, deleteBtn);
+
+
+                    if (value.checked === true) {
+                        li.className = "checked";
+                    }
+
                     todoArr.push({
-                        title: item
-                    })
-                }
-                let arrCheck = dataCheck.split(',');
-                arrCheck.forEach((value, index) => {
-                    let lies = document.getElementsByClassName("todos__text");
-                    if (value === "true") {
-                        lies[index].parentElement.className = "checked";
-                        todoArr[index].checked = "true";
-                    }
-                    if (value === "false") {
-                        todoArr[index].checked = "false";
-                    }
-                })
+                        title: value.title,
+                        checked: value.checked
+                    });
+                });
             }
         }
     }
@@ -216,7 +211,6 @@ function onPageLoaded() {
         todoArr = [];
         ul.innerHTML = "";
         localStorage.removeItem('todos');
-        localStorage.removeItem("checked");
     });
 
 
