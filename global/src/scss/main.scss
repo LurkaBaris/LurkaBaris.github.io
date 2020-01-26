@@ -30,6 +30,17 @@ body {
     z-index: 1;
     opacity: 1;
     transition: 0.9s ease all;
+
+    .slide__container {
+      top: 0;
+      transition: 0.9s ease all;
+    }
+  }
+
+  &__container {
+    position: relative;
+    top: -100px;
+    transition: 0.9s ease all;
   }
 }
 
@@ -387,6 +398,7 @@ body {
 
   &__item_active {
     margin-bottom: 0;
+
     .works__img {
       width: 330px;
       height: 330px;

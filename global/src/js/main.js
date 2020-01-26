@@ -62,7 +62,7 @@ $(document).ready(function () {
     $(".works__next").on("click", function () {
         $(".works__carousel-container").fadeOut(500,next);
         $(".works__carousel-container").fadeIn(500);
-    })
+    });
 
     $(".nav__link").on("click",function (event) {
         event.preventDefault();
