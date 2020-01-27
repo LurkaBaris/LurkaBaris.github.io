@@ -74,7 +74,19 @@ $(document).ready(function () {
         let nextSlide = $('.slide')[indexLink];
 
         $(nextSlide).toggleClass("slide_active");
-    })
+    });
+    $(".btn_header").on("click",function () {
+        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
+        $(currentSlide).toggleClass("slide_active");
+
+        $(".hire").toggleClass("slide_active");
+    });
+    $(".btn_nav").on("click",function () {
+        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
+        $(currentSlide).toggleClass("slide_active");
+
+        $(".hire").toggleClass("slide_active");
+    });
 });
 function prev() {
     let slide = $('.works__item');
