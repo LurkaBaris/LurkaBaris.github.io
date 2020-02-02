@@ -5,10 +5,10 @@
 }
 
 body {
+  height: 100vh;
   background-image: url("../img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
 }
 
 .container-main {
@@ -16,25 +16,26 @@ body {
   margin: 0 auto;
 }
 
+/*burger*/
 .burger-menu {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  opacity: 0;
   z-index: -1;
-
+  //opacity: 0;
+  display: none;
   background-image: url("../img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
 
-  transition: 0.9s ease all;
+  transition: 0.4s ease all;
 
   &_active {
     z-index: 2;
-    opacity: 1;
-    transition: 0.9s ease all;
+    display: block;
+    //opacity: 1;
   }
 
   .burger-menu &__top {
@@ -44,8 +45,9 @@ body {
   &__bot {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 987px;
-    perspective: 1000px;
+    perspective: 1220px;
   }
 
   &__nav {
@@ -61,6 +63,7 @@ body {
     font-size: 55px;
     color: #fff;
     cursor: pointer;
+    transition: 0.4s ease all;
   }
 
   &__item:last-child {
@@ -79,20 +82,39 @@ body {
 
   &__last-slide {
     position: relative;
-    width: 65%;
+    width: 80%;
     border: 25px solid #0c2ad3;
     transform: rotateY(45deg);
+    cursor: pointer;
   }
 
   &__slide-container {
+    width: 200%;
+    max-height: 335px;
     margin-top: 8px;
-    width: 230%;
-    height: 100px;
     transform-origin: 0 0;
-    transform: scale(0.4);
+    transform: scale(0.45);
+
+    .slide {
+      position: static;
+    }
+  }
+
+  &__last-slide:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    box-shadow: 0px 0px 30px 9px rgba(0, 0, 0, 0.75);
   }
 }
 
+/*burger*/
+
+/*slide*/
 .slide {
   display: block;
   position: absolute;
@@ -100,8 +122,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0;
   z-index: -1;
+  opacity: 0;
   transition: 0.9s ease all;
 
   &_active {
@@ -120,17 +142,20 @@ body {
     top: -100px;
     transition: 0.9s ease all;
   }
+
 }
 
+/*slide*/
+/*btn default*/
 .btn {
   font-family: "Proxima Nova Bold", sans-serif;
   font-weight: bold;
   font-size: 14px;
+  letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
   border: none;
   background-color: #0f33ff;
-  letter-spacing: 1px;
 
   &_header {
     position: absolute;
@@ -172,6 +197,9 @@ body {
   }
 }
 
+/*btn default*/
+
+/*nav main*/
 
 .nav {
   display: flex;
@@ -193,12 +221,12 @@ body {
     content: "";
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     left: -13px;
     width: 4px;
     height: 3px;
     background-color: #fff;
     opacity: 0.3;
+    transform: translateY(-50%);
   }
 
   &__item_active:before {
@@ -254,6 +282,8 @@ body {
 
 }
 
+/*nav main*/
+/*top logo burger-btn*/
 .top {
   display: flex;
   justify-content: space-between;
@@ -280,6 +310,8 @@ body {
   }
 }
 
+/*top logo burger-btn*/
+
 .title {
   font-family: "Proxima Nova Black", sans-serif;
   font-size: 82px;
@@ -287,6 +319,7 @@ body {
   color: #fff;
 }
 
+/*header*/
 .header-main {
   background-image: url("../img/bg.png");
   background-size: cover;
@@ -295,7 +328,7 @@ body {
   &__bot {
     display: flex;
     justify-content: space-between;
-    max-width: 1123px;
+    max-width: 1085px;
   }
 
   &__home {
@@ -392,7 +425,8 @@ body {
   }
 }
 
-
+/*header*/
+/*works*/
 .works {
   background-image: url("../img/bg.png");
   background-size: cover;
@@ -496,6 +530,7 @@ body {
   }
 }
 
+/*works*/
 .about {
   background-image: url("../img/bg.png");
   background-size: cover;
@@ -620,6 +655,7 @@ body {
   }
 }
 
+/*contact*/
 .contact {
   background-image: url("../img/contact/contact__bg.png");
   background-position: center;
@@ -663,6 +699,8 @@ body {
   }
 
 }
+
+/*contact*/
 
 /*hire*/
 .hire {
