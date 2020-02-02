@@ -55,6 +55,8 @@ $(document).ready(function () {
 
         let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
         $(currentSlide).toggleClass("slide_active");
+        $(currentSlide).toggleClass("slide_display");
+
 
         let nextSlide = $(".slide")[index];
         $(nextSlide).toggleClass("slide_active");
@@ -66,7 +68,12 @@ $(document).ready(function () {
     $(".burger-menu__last-slide").on("click", function () {
         $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
 
+        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
+        $(currentSlide).toggleClass("slide_display");
         $(".burger-menu").toggleClass("burger-menu_active");
+
+
+
         $(".burger-menu__slide-container").empty();
 
         $(".top__menu").off();
@@ -204,6 +211,8 @@ function burgerOn() {
 
     let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
     let mainSlide = $(currentSlide).clone();
+    $(currentSlide).toggleClass("slide_display");
+
 
     $(".burger-menu__slide-container").append(mainSlide);
 
@@ -212,9 +221,10 @@ function burgerOn() {
     $(".top__menu").bind("click", function burgerOff() {
         $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
 
+        $(currentSlide).toggleClass("slide_display");
+
         $(".burger-menu").toggleClass("burger-menu_active");
         $(".burger-menu__slide-container").empty();
-
 
         $(".top__menu").off();
         $(".top__menu").on("click", burgerOn);

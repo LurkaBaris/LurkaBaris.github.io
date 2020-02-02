@@ -5,10 +5,10 @@
 }
 
 body {
-  height: 100vh;
+  //height: 100vh;
   background-image: url("../img/bg.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  //background-repeat: no-repeat;
 }
 
 .container-main {
@@ -29,7 +29,6 @@ body {
   background-image: url("../img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-
   transition: 0.4s ease all;
 
   &_active {
@@ -135,6 +134,11 @@ body {
       top: 0;
       transition: 0.9s ease all;
     }
+  }
+
+  &_display {
+    opacity: 0;
+    transition: 0.9s ease all;
   }
 
   &__container {
