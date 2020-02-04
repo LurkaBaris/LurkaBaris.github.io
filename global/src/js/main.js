@@ -11,193 +11,202 @@ $(document).ready(function () {
         $(".works__carousel-container").fadeIn(500);
     });
 
-    $(".nav__link").on("click", function (event) {
-        event.preventDefault();
-        let indexLink = $(".slide_active .nav__link").index(event.target);
+    $(".nav__link").on("click", () => navClick(event));
 
-        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-        $(currentSlide).toggleClass("slide_active");
+    $(".btn_header").on("click", btnClick);
 
-        let nextSlide = $('.slide')[indexLink];
-
-        $(nextSlide).toggleClass("slide_active");
-    });
-
-    $(".btn_header").on("click", function () {
-        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-        $(currentSlide).toggleClass("slide_active");
-
-        $(".hire").toggleClass("slide_active");
-    });
-
-    $(".btn_nav").on("click", function () {
-        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-        $(currentSlide).toggleClass("slide_active");
-
-        $(".hire").toggleClass("slide_active");
-    });
+    $(".btn_nav").on("click", btnClick);
 
 
     $(".top__menu").on("click", burgerOn);
 
     $(".burger-menu__item").on("click", function (e) {
+
         $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
 
-        $(".burger-menu").toggleClass("burger-menu_active");
-        $(".burger-menu__slide-container").empty();
+        $(".wrapper").removeClass("wrapper_active");
 
-        let currentNav = $(".burger-menu__item")[$(".slide_active").index(".slide")];
-        $(currentNav).toggleClass("burger-menu__item_active");
+        $(".wrapper").removeClass("contact-bg");
+
+        onFocus($(".slide_active"));
+
+        $(".slide_active").removeClass("slide_active");
+
+        $($(".nav__item")[activeSlide]).removeClass("nav__item_active");
 
         let index = $(".burger-menu__item").index(e.target);
 
-        $($(".burger-menu__item")[index]).toggleClass("burger-menu__item_active");
+        $($(".slide")[index]).addClass("slide_active");
+        activeSlide = index;
 
-        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-        $(currentSlide).toggleClass("slide_active");
-        $(currentSlide).toggleClass("slide_display");
+        $($(".nav__item")[activeSlide]).addClass("nav__item_active");
 
-
-        let nextSlide = $(".slide")[index];
-        $(nextSlide).toggleClass("slide_active");
+        checkBg();
+        checkBtn();
+        onFocus($(".slide_active"));
+        $(".burger-menu").toggleClass("burger-menu_active");
 
         $(".top__menu").off();
         $(".top__menu").on("click", burgerOn);
     });
 
-    $(".burger-menu__last-slide").on("click", function () {
-        $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
+    $(".wrapper").on("click", function (e) {
+        if ($(e.target).hasClass("wrapper_active")) {
+            $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
 
-        let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-        $(currentSlide).toggleClass("slide_display");
-        $(".burger-menu").toggleClass("burger-menu_active");
+            $(".wrapper").removeClass("wrapper_active");
 
+            $(".wrapper").removeClass("contact-bg");
+            checkBg();
 
+            onFocus($(".slide_active"));
+            $(".burger-menu").toggleClass("burger-menu_active");
 
-        $(".burger-menu__slide-container").empty();
-
-        $(".top__menu").off();
-        $(".top__menu").on("click", burgerOn);
+            $(".top__menu").off();
+            $(".top__menu").on("click", burgerOn);
+        }
     })
 });
+let activeSlide = 0;
 
 function animateScroll(e) {
     let delta = parseInt(e.wheelDelta);
     if (delta >= 0) {
-        if ($(".slide_active").index(".slide") === 0) {
-            let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-            $(currentSlide).toggleClass("slide_active");
-            let nextSlide = $(".slide").last()[0];
-            $(nextSlide).toggleClass("slide_active");
+        $(".slide_active").removeClass("slide_active");
 
-            $(window).off();
-            setTimeout(function () {
-                $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
-            }, 600);
-
+        $($(".nav__item")[activeSlide]).removeClass("nav__item_active");
+        if (activeSlide === 0) {
+            activeSlide = 4;
         } else {
-
-            let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-            $(currentSlide).toggleClass("slide_active");
-            let nextSlide = $(currentSlide).prev()[0];
-            $(nextSlide).toggleClass("slide_active");
-
-            $(window).off();
-            setTimeout(function () {
-                $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
-            }, 600);
-
+            activeSlide -= 1;
         }
+
+        checkBg();
+        checkBtn();
+        $($(".slide")[activeSlide]).addClass("slide_active");
+
+        $($(".nav__item")[activeSlide]).addClass("nav__item_active");
+
+        $(window).off();
+        setTimeout(function () {
+            $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
+        }, 600);
+
     } else if (delta <= 0) {
-        if ($(".slide_active").index(".slide") === $(".slide").length - 1) {
-            let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-            $(currentSlide).toggleClass("slide_active");
-            let nextSlide = $(".slide").first()[0];
-            $(nextSlide).toggleClass("slide_active");
+        $(".slide_active").removeClass("slide_active");
 
+        $($(".nav__item")[activeSlide]).removeClass("nav__item_active");
 
-            $(window).off();
-            setTimeout(function () {
-                $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
-            }, 600);
-
-
+        if (activeSlide === 4) {
+            activeSlide = 0;
         } else {
-
-            let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-            $(currentSlide).toggleClass("slide_active");
-            let nextSlide = $(currentSlide).next()[0];
-            $(nextSlide).toggleClass("slide_active");
-
-            $(window).off();
-            setTimeout(function () {
-                $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
-            }, 600);
+            activeSlide += 1;
         }
+        checkBg();
+        checkBtn();
+        $($(".nav__item")[activeSlide]).addClass("nav__item_active");
+
+        $($(".slide")[activeSlide]).addClass("slide_active");
+        $(window).off();
+        setTimeout(function () {
+            $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
+        }, 600);
     }
 }
 
+function navClick(e) {
+    e.preventDefault();
+    let indexLink = $(".nav__link").index(e.target);
+    if (indexLink !== -1) {
+        $($(".nav__item")[activeSlide]).removeClass("nav__item_active");
+        activeSlide = indexLink;
+        $(".slide_active").removeClass("slide_active");
+
+        $($(".nav__item")[indexLink]).addClass("nav__item_active");
+        checkBtn();
+        checkBg();
+        $($(".slide")[indexLink]).addClass("slide_active");
+    }
+}
+
+function btnClick() {
+    $($(".nav__item")[activeSlide]).removeClass("nav__item_active");
+    activeSlide = 4;
+
+    $($(".nav__item")[activeSlide]).addClass("nav__item_active");
+
+    checkBtn();
+    checkBg();
+
+    let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
+    $(currentSlide).toggleClass("slide_active");
+
+    $(".hire").toggleClass("slide_active");
+}
+
+function checkBtn() {
+    if (activeSlide != 0) {
+        $(".btn_nav").addClass("btn_active");
+    } else {
+        $(".btn_nav").removeClass("btn_active");
+    }
+}
+
+function checkBg() {
+    if (activeSlide === 3) {
+        $(".wrap-main").addClass("contact-bg");
+    } else {
+        $(".wrap-main").removeClass("contact-bg");
+    }
+
+}
+
 function prev() {
-    let slide = $('.works__item');
+    let currentActive = $(".works__item_active");
+    $(currentActive).removeClass("works__item_active");
 
-    let img1 = $(slide[0]).children()[0].src;
-    let img2 = $(slide[1]).children()[0].src;
-    let img3 = $(slide[2]).children()[0].src;
+    let prev = $(".works__left");
+    $(prev).removeClass("works__left");
 
-    let name1 = $(slide[0]).children()[1].innerHTML;
-    let name2 = $(slide[1]).children()[1].innerHTML;
-    let name3 = $(slide[2]).children()[1].innerHTML;
+    let next = $(".works__right");
+    $(next).removeClass("works__right");
 
-    let paragraph1 = $(slide[0]).children()[2].innerHTML;
-    let paragraph2 = $(slide[1]).children()[2].innerHTML;
-    let paragraph3 = $(slide[2]).children()[2].innerHTML;
-
-    $(slide[0]).children()[0].src = img3;
-    $(slide[1]).children()[0].src = img1;
-    $(slide[2]).children()[0].src = img2;
-
-    $(slide[0]).children()[1].innerHTML = name3;
-    $(slide[1]).children()[1].innerHTML = name1;
-    $(slide[2]).children()[1].innerHTML = name2;
-
-    $(slide[0]).children()[2].innerHTML = paragraph3;
-    $(slide[1]).children()[2].innerHTML = paragraph1;
-    $(slide[2]).children()[2].innerHTML = paragraph2;
+    $(currentActive).addClass("works__right");
+    $(prev).addClass("works__item_active");
+    $(next).addClass("works__left");
 }
 
 function next() {
-    let slide = $('.works__item');
+    let currentActive = $(".works__item_active");
+    $(currentActive).removeClass("works__item_active");
 
+    let prev = $(".works__left");
+    $(prev).removeClass("works__left");
 
-    let img1 = $(slide[0]).children()[0].src;
-    let img2 = $(slide[1]).children()[0].src;
-    let img3 = $(slide[2]).children()[0].src;
+    let next = $(".works__right");
+    $(next).removeClass("works__right");
 
-    let name1 = $(slide[0]).children()[1].innerHTML;
-    let name2 = $(slide[1]).children()[1].innerHTML;
-    let name3 = $(slide[2]).children()[1].innerHTML;
-
-    let paragraph1 = $(slide[0]).children()[2].innerHTML;
-    let paragraph2 = $(slide[1]).children()[2].innerHTML;
-    let paragraph3 = $(slide[2]).children()[2].innerHTML;
-
-    $(slide[0]).children()[0].src = img2;
-    $(slide[1]).children()[0].src = img3;
-    $(slide[2]).children()[0].src = img1;
-
-    $(slide[0]).children()[1].innerHTML = name2;
-    $(slide[1]).children()[1].innerHTML = name3;
-    $(slide[2]).children()[1].innerHTML = name1;
-
-    $(slide[0]).children()[2].innerHTML = paragraph2;
-    $(slide[1]).children()[2].innerHTML = paragraph3;
-    $(slide[2]).children()[2].innerHTML = paragraph1;
+    $(currentActive).addClass("works__left");
+    $(prev).addClass("works__right");
+    $(next).addClass("works__item_active");
 }
 
 function burgerOn() {
     $(".top__menu").off();
 
+    $("body").addClass('overflow');
+
+    setTimeout(function () {
+        $("body").removeClass('overflow');
+    },600);
+
     $(window).off();
+
+    $(".wrap-main").removeClass("contact-bg");
+
+    if (activeSlide === 3) {
+        $(".wrapper").addClass("contact-bg")
+    }
 
     $(".burger-menu__item").each(function () {
         $(this).removeClass("burger-menu__item_active");
@@ -206,25 +215,22 @@ function burgerOn() {
     $(".burger-menu").toggleClass("burger-menu_active");
 
     let currentNav = $(".burger-menu__item")[$(".slide_active").index(".slide")];
-    $(currentNav).toggleClass("burger-menu__item_active");
+    $(currentNav).addClass('burger-menu__item_active');
 
+    $(".wrapper").addClass("wrapper_active");
 
-    let currentSlide = $(".slide")[$(".slide_active").index(".slide")];
-    let mainSlide = $(currentSlide).clone();
-    $(currentSlide).toggleClass("slide_display");
-
-
-    $(".burger-menu__slide-container").append(mainSlide);
-
-    offFocus($(".burger-menu__slide-container"));
+    offFocus($(".slide_active"));
 
     $(".top__menu").bind("click", function burgerOff() {
         $(window).on("mousewheel DOMMouseScroll MozMousePixelScroll", () => animateScroll(event));
 
-        $(currentSlide).toggleClass("slide_display");
+        $(".wrapper").removeClass("wrapper_active");
 
+        $(".wrapper").removeClass("contact-bg");
+        checkBg();
+
+        onFocus($(".slide_active"));
         $(".burger-menu").toggleClass("burger-menu_active");
-        $(".burger-menu__slide-container").empty();
 
         $(".top__menu").off();
         $(".top__menu").on("click", burgerOn);
@@ -236,10 +242,20 @@ function offFocus(target) {
         let child = $(target).children();
         if (child) {
             for (let item of child) {
-                $(item).focus(function () {
-                    $(item).blur();
-                });
+                $(item).attr('tabindex', -1);
                 offFocus($(item));
+            }
+        }
+    })
+}
+
+function onFocus(target) {
+    target.each(function () {
+        let child = $(target).children();
+        if (child) {
+            for (let item of child) {
+                $(item).removeAttr('tabindex');
+                onFocus($(item));
             }
         }
     })

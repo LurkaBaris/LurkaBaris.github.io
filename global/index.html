@@ -10,517 +10,338 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header class="slide slide_active header-main">
-    <div class="header-main__top top container-main">
-        <div class="top__logo">
-            <svg class="top__logo-svg"
-                 xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="30px" height="28px">
-                <defs>
-                    <linearGradient id="PSgrad_0" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
-                        <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
-                        <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
-                    </linearGradient>
+<div class="wrap-main">
+    <div class="container-main">
+        <div class="wrapper">
+            <div class="header-main">
+                <div class="container-main">
+                    <div class="header-main__top top">
+                        <div class="top__logo">
+                            <svg class="top__logo-svg"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="30px" height="28px">
+                                <defs>
+                                    <linearGradient id="PSgrad_0" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
+                                        <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
+                                        <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
+                                    </linearGradient>
 
-                </defs>
-                <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
-                      d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                <path fill="url(#PSgrad_0)"
-                      d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-            </svg>
-            global
-        </div>
-        <svg class="top__menu"
-             xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink"
-             width="19px" height="14px">
-            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                  d="M18.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,0.000 1.000,0.000 L18.000,0.000 C18.552,0.000 19.000,0.448 19.000,1.000 C19.000,1.552 18.552,2.000 18.000,2.000 ZM4.000,8.000 C3.448,8.000 3.000,7.552 3.000,7.000 C3.000,6.448 3.448,6.000 4.000,6.000 L15.000,6.000 C15.552,6.000 16.000,6.448 16.000,7.000 C16.000,7.552 15.552,8.000 15.000,8.000 L4.000,8.000 ZM1.000,12.000 L18.000,12.000 C18.552,12.000 19.000,12.448 19.000,13.000 C19.000,13.552 18.552,14.000 18.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 Z"/>
-        </svg>
-    </div>
-    <div class="container-main">
-        <div class="header-main__bot">
-            <div class="header-main__nav nav">
-                <div class="nav__bar">
-                    <div class="nav__item nav__item_active nav__item_active-home"><a href=""
-                                                                                     class="nav__link">Home</a>
-                    </div>
-                    <div class="nav__item"><a href="#" class="nav__link">02</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">03</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">04</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">05</a></div>
-                </div>
-            </div>
-            <div class="slide__container">
-                <div class="header-main__home">
-                    <div class="header-main__content">
-                        <div class="header-main__title title">Your next
-                            interactive
-                            experience
+                                </defs>
+                                <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
+                                      d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
+                                <path fill="url(#PSgrad_0)"
+                                      d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
+                            </svg>
+                            global
                         </div>
-                        <div class="header-main__btn-container">
-                            <button class="header-main__btn btn btn_header">
-                                <span class="header-main__btn-span">hire us</span>
-                                <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="18px" height="14px">
-                                    <defs>
-                                        <filter id="Filter_0">
-                                            <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1"
-                                                     result="floodOut"/>
-                                            <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
-                                                         result="compOut"/>
-                                            <feBlend mode="normal" in="compOut" in2="SourceGraphic"/>
-                                        </filter>
-
-                                    </defs>
-                                    <g filter="url(#Filter_0)">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M10.146,1.716 C9.739,1.317 9.739,0.689 10.146,0.290 C10.553,-0.096 11.193,-0.096 11.600,0.290 L17.695,6.268 C17.884,6.453 18.000,6.710 18.000,6.995 C18.000,7.280 17.884,7.537 17.695,7.723 L11.600,13.701 C11.193,14.100 10.553,14.100 10.146,13.701 C9.739,13.302 9.739,12.674 10.146,12.274 L14.510,8.008 L1.018,8.008 C0.451,8.009 -0.000,7.553 -0.000,6.996 C-0.000,6.439 0.451,5.997 1.018,5.997 L14.509,5.997 L10.146,1.716 Z"/>
-                                    </g>
-                                </svg>
-                            </button>
-                        </div>
-                        <img class="header-main__content-bg" src="dist/img/header/header__bg.png" alt="header__bg">
-                    </div>
-                    <div class="header-main__achievements">
-                        <div class="header-main__achievements-item">
-                            <div class="header-main__achievements-title">Metiew & Smith</div>
-                            <div class="header-main__achievements-paragraph">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do
-                            </div>
-                        </div>
-                        <div class="header-main__achievements-item">
-                            <div class="header-main__achievements-title">Fantasy interactive</div>
-                            <div class="header-main__achievements-paragraph">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do
-                            </div>
-                        </div>
-                        <div class="header-main__achievements-item">
-                            <div class="header-main__achievements-title">Paul & shark</div>
-                            <div class="header-main__achievements-paragraph">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<section class="slide works">
-    <div class="container-main">
-        <div class="works__top top">
-            <div class="top__logo">
-                <svg class="top__logo-svg"
-                     xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="30px" height="28px">
-                    <defs>
-                        <linearGradient id="PSgrad_1" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
-                            <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
-                            <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                    <path fill="url(#PSgrad_1)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                </svg>
-                global
-            </div>
-            <button class="works__btn btn btn_nav btn_to">hire us</button>
-            <svg class="top__menu"
-                 xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="19px" height="14px">
-                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M18.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,0.000 1.000,0.000 L18.000,0.000 C18.552,0.000 19.000,0.448 19.000,1.000 C19.000,1.552 18.552,2.000 18.000,2.000 ZM4.000,8.000 C3.448,8.000 3.000,7.552 3.000,7.000 C3.000,6.448 3.448,6.000 4.000,6.000 L15.000,6.000 C15.552,6.000 16.000,6.448 16.000,7.000 C16.000,7.552 15.552,8.000 15.000,8.000 L4.000,8.000 ZM1.000,12.000 L18.000,12.000 C18.552,12.000 19.000,12.448 19.000,13.000 C19.000,13.552 18.552,14.000 18.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 Z"/>
-            </svg>
-        </div>
-    </div>
-    <div class="container-main">
-        <div class="works__bot">
-            <div class="works__nav nav">
-                <div class="nav__bar">
-                    <div class="nav__item  "><a href=""
-                                                class="nav__link">01</a>
-                    </div>
-                    <div class="nav__item nav__item_active nav__item_active-works"><a href="#"
-                                                                                      class="nav__link">Works</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">03</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">04</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">05</a></div>
-                </div>
-            </div>
-            <div class="slide__container">
-                <div class="works__content">
-                    <div class="works__title">Selected work</div>
-                    <div class="works__carousel">
-                        <div class="works__circle works__prev">
-                            <img src="dist/img/works/works__arrow1.png" alt="works__arrow1">
-                        </div>
-                        <div class="works__carousel-container">
-                            <div class="works__item ">
-                                <img class="works__img" src="dist/img/works/works__item1.png" alt="works__item1">
-                                <div class="works__item-title">victory</div>
-                                <div class="works__paragraph">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                </div>
-                            </div>
-                            <div class="works__item works__item_active">
-                                <img class="works__img" src="dist/img/works/works__item2.png" alt="works__item2">
-                                <div class="works__item-title">Metiew & Smith</div>
-                                <div class="works__paragraph">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                </div>
-                            </div>
-                            <div class="works__item">
-                                <img class="works__img" src="dist/img/works/works__item3.png" alt="works__item3">
-                                <div class="works__item-title">Alex Nowak</div>
-                                <div class="works__paragraph">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                </div>
-                            </div>
-                        </div>
-                        <div class="works__circle works__next">
-                            <img src="dist/img/works/works__arrow2.png" alt="works__arrow2">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="slide about">
-    <div class="container-main">
-        <div class="about__top top">
-            <div class="top__logo">
-                <svg class="top__logo-svg"
-                     xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="30px" height="28px">
-                    <defs>
-                        <linearGradient id="PSgrad_2" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
-                            <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
-                            <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                    <path fill="url(#PSgrad_2)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                </svg>
-                global
-            </div>
-            <button class="works__btn btn btn_nav">hire us</button>
-            <svg class="top__menu"
-                 xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="19px" height="14px">
-                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M18.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,0.000 1.000,0.000 L18.000,0.000 C18.552,0.000 19.000,0.448 19.000,1.000 C19.000,1.552 18.552,2.000 18.000,2.000 ZM4.000,8.000 C3.448,8.000 3.000,7.552 3.000,7.000 C3.000,6.448 3.448,6.000 4.000,6.000 L15.000,6.000 C15.552,6.000 16.000,6.448 16.000,7.000 C16.000,7.552 15.552,8.000 15.000,8.000 L4.000,8.000 ZM1.000,12.000 L18.000,12.000 C18.552,12.000 19.000,12.448 19.000,13.000 C19.000,13.552 18.552,14.000 18.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 Z"/>
-            </svg>
-        </div>
-    </div>
-    <div class="container-main">
-        <div class="about__bot">
-            <div class="about__nav nav">
-                <div class="nav__bar">
-                    <div class="nav__item  "><a href=""
-                                                class="nav__link">01</a>
-                    </div>
-                    <div class="nav__item  "><a href="#"
-                                                class="nav__link">02</a></div>
-                    <div class="nav__item nav__item_active nav__item_active-about"><a href="#"
-                                                                                      class="nav__link">About</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">04</a></div>
-                    <div class="nav__item"><a href="#" class="nav__link">05</a></div>
-                </div>
-            </div>
-            <div class="slide__container">
-                <div class="about__content">
-                    <div class="about__title title">
-                        <div> We</div>
-                        believe in passionate people
-                    </div>
-                    <div class="about__career">
-                        career
-                        <svg class="about__career-svg"
+                        <button class="btn btn_nav">hire us</button>
+                        <svg class="top__menu"
                              xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink"
-                             width="18px" height="14px">
-                            <defs>
-                                <filter id="Filter_1">
-                                    <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1" result="floodOut"/>
-                                    <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut"/>
-                                    <feBlend mode="normal" in="compOut" in2="SourceGraphic"/>
-                                </filter>
-
-                            </defs>
-                            <g filter="url(#Filter_1)">
-                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                      d="M10.146,1.716 C9.739,1.317 9.739,0.689 10.146,0.290 C10.553,-0.096 11.193,-0.096 11.600,0.290 L17.695,6.268 C17.884,6.453 18.000,6.710 18.000,6.995 C18.000,7.280 17.884,7.537 17.695,7.723 L11.600,13.701 C11.193,14.100 10.553,14.100 10.146,13.701 C9.739,13.302 9.739,12.674 10.146,12.274 L14.510,8.008 L1.018,8.008 C0.451,8.009 -0.000,7.552 -0.000,6.996 C-0.000,6.439 0.451,5.997 1.018,5.997 L14.509,5.997 L10.146,1.716 Z"/>
-                            </g>
+                             width="19px" height="14px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M18.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,0.000 1.000,0.000 L18.000,0.000 C18.552,0.000 19.000,0.448 19.000,1.000 C19.000,1.552 18.552,2.000 18.000,2.000 ZM4.000,8.000 C3.448,8.000 3.000,7.552 3.000,7.000 C3.000,6.448 3.448,6.000 4.000,6.000 L15.000,6.000 C15.552,6.000 16.000,6.448 16.000,7.000 C16.000,7.552 15.552,8.000 15.000,8.000 L4.000,8.000 ZM1.000,12.000 L18.000,12.000 C18.552,12.000 19.000,12.448 19.000,13.000 C19.000,13.552 18.552,14.000 18.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 Z"/>
                         </svg>
                     </div>
-                    <div class="about__content-container">
-                        <div class="about__item">
-                            <img src="dist/img/about/about__item1.png" alt="about__item1">
-                            <div class="about__item-title">Winners</div>
-                        </div>
-                        <div class="about__item">
-                            <img src="dist/img/about/about__item2.png" alt="about__item2">
-                            <div class="about__item-title">Philosophy</div>
-                        </div>
-                        <div class="about__item">
-                            <img src="dist/img/about/about__item3.png" alt="about__item3">
-                            <div class="about__item-title">History</div>
-                        </div>
-                    </div>
-                    <img class="about__bg" src="dist/img/about/about__bg.png" alt="about__bg">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="slide contact">
-    <div class="container-main">
-        <div class="contact__top top">
-            <div class="top__logo">
-                <svg class="top__logo-svg"
-                     xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="30px" height="28px">
-                    <defs>
-                        <linearGradient id="PSgrad_3" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
-                            <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
-                            <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                    <path fill="url(#PSgrad_3)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                </svg>
-                global
-            </div>
-            <button class=" btn btn_nav">hire us</button>
-            <svg class="top__menu"
-                 xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="19px" height="14px">
-                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M18.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,0.000 1.000,0.000 L18.000,0.000 C18.552,0.000 19.000,0.448 19.000,1.000 C19.000,1.552 18.552,2.000 18.000,2.000 ZM4.000,8.000 C3.448,8.000 3.000,7.552 3.000,7.000 C3.000,6.448 3.448,6.000 4.000,6.000 L15.000,6.000 C15.552,6.000 16.000,6.448 16.000,7.000 C16.000,7.552 15.552,8.000 15.000,8.000 L4.000,8.000 ZM1.000,12.000 L18.000,12.000 C18.552,12.000 19.000,12.448 19.000,13.000 C19.000,13.552 18.552,14.000 18.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 Z"/>
-            </svg>
-        </div>
-    </div>
-    <div class="container-main">
-        <div class="contact__bot">
-            <div class="contact__nav nav">
-                <div class="nav__bar">
-                    <div class="nav__item  "><a href=""
-                                                class="nav__link">01</a>
-                    </div>
-                    <div class="nav__item"><a href="#"
-                                              class="nav__link">02</a></div>
-                    <div class="nav__item"><a href="#"
-                                              class="nav__link">03</a></div>
-                    <div class="nav__item nav__item_active nav__item_active-contact"><a href="#" class="nav__link">Contact</a>
-                    </div>
-                    <div class="nav__item"><a href="#" class="nav__link">05</a></div>
-                </div>
-            </div>
-            <div class="slide__container">
-                <div class="contact__content">
-                    <div class="contact__block">
-                        <div class="contact__info">Pawia 5,31-154 Kraków, Polanrd
-                        </div>
-                        <div class="contact__info"> ouremail@gmail.com</div>
-                        <div class="contact__info">+48 12 628 75 60</div>
-                        <button class="contact__btn btn btn_contact btn_blue"><img
-                                src="dist/img/contact/contact__behance.png" alt="contact__behance"></button>
-                        <button class="contact__btn btn btn_contact btn_pink"><img
-                                src="dist/img/contact/contact__dribble.png" alt="contact__dribble"></button>
-                        <button class="contact__btn btn btn_contact ">contact us</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="slide hire">
-    <div class="container-main">
-        <div class="hire__top top">
-            <div class="top__logo">
-                <svg class="top__logo-svg"
-                     xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="30px" height="28px">
-                    <defs>
-                        <linearGradient id="PSgrad_4" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
-                            <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
-                            <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                    <path fill="url(#PSgrad_4)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                </svg>
-                global
-            </div>
-            <button class="works__btn btn btn_nav">hire us</button>
-            <svg class="top__menu"
-                 xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="19px" height="14px">
-                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M18.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,0.000 1.000,0.000 L18.000,0.000 C18.552,0.000 19.000,0.448 19.000,1.000 C19.000,1.552 18.552,2.000 18.000,2.000 ZM4.000,8.000 C3.448,8.000 3.000,7.552 3.000,7.000 C3.000,6.448 3.448,6.000 4.000,6.000 L15.000,6.000 C15.552,6.000 16.000,6.448 16.000,7.000 C16.000,7.552 15.552,8.000 15.000,8.000 L4.000,8.000 ZM1.000,12.000 L18.000,12.000 C18.552,12.000 19.000,12.448 19.000,13.000 C19.000,13.552 18.552,14.000 18.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 Z"/>
-            </svg>
-        </div>
-    </div>
-    <div class="container-main">
-        <div class="hire__bot">
-            <div class="hire__nav nav">
-                <div class="nav__bar">
-                    <div class="nav__item  "><a href=""
-                                                class="nav__link">01</a>
-                    </div>
-                    <div class="nav__item"><a href="#"
-                                              class="nav__link">02</a></div>
-                    <div class="nav__item"><a href="#"
-                                              class="nav__link">03</a></div>
-                    <div class="nav__item  "><a href="#" class="nav__link">04</a>
-                    </div>
-                    <div class="nav__item nav__item_active nav__item_active-hire"><a href="#" class="nav__link">Hire
-                        us</a></div>
-                </div>
-            </div>
-            <div class="slide__container">
-                <div class="hire__content">
-                    <div class="hire__title">
-                        You want us to do
-                    </div>
-                    <form class="hire__form" action="#">
-                        <div class="hire__checkbox-container">
-                            <div class="hire__check-container">
-                                <input type="checkbox" class="hire__checkbox" id="hire__check1">
-                                <label for="hire__check1" class="hire__check">
-                                    <svg class="hire__svg"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="20px" height="15px">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
-                                    </svg>
-                                    App Design</label>
-                                <input type="checkbox" class="hire__checkbox" id="hire__check2">
-                                <label for="hire__check2" class="hire__check">
-                                    <svg class="hire__svg"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="20px" height="15px">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
-                                    </svg>
-                                    Graphic Design</label>
-                                <input type="checkbox" class="hire__checkbox" id="hire__check3">
-                                <label for="hire__check3" class="hire__check">
-                                    <svg class="hire__svg"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="20px" height="15px">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
-                                    </svg>
-                                    Motion Design</label>
+                    <div class="nav">
+                        <div class="nav__bar">
+                            <div class="nav__item nav__item_active nav__item_home "><a href=""
+                                                                                       class="nav__link"><span
+                                    class="nav__name">Home</span></a>
                             </div>
-                            <div class="hire__check-container hire__check-container_width">
-                                <input type="checkbox" class="hire__checkbox" id="hire__check4">
-                                <label for="hire__check4" class="hire__check hire__check_margin">
-                                    <svg class="hire__svg"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="20px" height="15px">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                            <div class="nav__item nav__item_works"><a href="#"
+                                                                      class="nav__link"><span
+                                    class="nav__name">Works</span></a>
+                            </div>
+                            <div class="nav__item nav__item_about"><a href="#" class="nav__link"><span
+                                    class="nav__name">About</span></a></div>
+                            <div class="nav__item nav__item_contact"><a href="#" class="nav__link"><span
+                                    class="nav__name">Contact</span></a></div>
+                            <div class="nav__item nav__item_hire"><a href="#" class="nav__link"><span
+                                    class="nav__name">Hire us</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="home-main slide slide_active">
+                <div class="container-main">
+                    <div class="home-main__home">
+                        <div class="home-main__content">
+                            <div class="home-main__title title">Your next
+                                interactive
+                                experience
+                            </div>
+                            <div class="home-main__btn-container">
+                                <button class="home-main__btn btn btn_header">
+                                    <span class="home-main__btn-span">hire us</span>
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            width="18px" height="14px">
+                                        <defs>
+                                            <filter id="Filter_0">
+                                                <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1"
+                                                         result="floodOut"/>
+                                                <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
+                                                             result="compOut"/>
+                                                <feBlend mode="normal" in="compOut" in2="SourceGraphic"/>
+                                            </filter>
+
+                                        </defs>
+                                        <g filter="url(#Filter_0)">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M10.146,1.716 C9.739,1.317 9.739,0.689 10.146,0.290 C10.553,-0.096 11.193,-0.096 11.600,0.290 L17.695,6.268 C17.884,6.453 18.000,6.710 18.000,6.995 C18.000,7.280 17.884,7.537 17.695,7.723 L11.600,13.701 C11.193,14.100 10.553,14.100 10.146,13.701 C9.739,13.302 9.739,12.674 10.146,12.274 L14.510,8.008 L1.018,8.008 C0.451,8.009 -0.000,7.553 -0.000,6.996 C-0.000,6.439 0.451,5.997 1.018,5.997 L14.509,5.997 L10.146,1.716 Z"/>
+                                        </g>
                                     </svg>
-                                    UX Design</label>
-                                <input type="checkbox" class="hire__checkbox" id="hire__check5">
-                                <label for="hire__check5" class="hire__check">
-                                    <svg class="hire__svg"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="20px" height="15px">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
-                                    </svg>
-                                    Webdesign</label>
-                                <input type="checkbox" class="hire__checkbox" id="hire__check6">
-                                <label for="hire__check6" class="hire__check">
-                                    <svg class="hire__svg"
-                                         xmlns="http://www.w3.org/2000/svg"
-                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="20px" height="15px">
-                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                              d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
-                                    </svg>
-                                    Marketing</label>
+                                </button>
+                            </div>
+                            <img class="home-main__content-bg" src="dist/img/header/header__bg.png"
+                                 alt="header__bg">
+                        </div>
+                        <div class="home-main__achievements">
+                            <div class="home-main__achievements-item">
+                                <div class="home-main__achievements-title">Metiew & Smith</div>
+                                <div class="home-main__achievements-paragraph">Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipisicing elit, sed do
+                                </div>
+                            </div>
+                            <div class="home-main__achievements-item">
+                                <div class="home-main__achievements-title">Fantasy interactive</div>
+                                <div class="home-main__achievements-paragraph">Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipisicing elit, sed do
+                                </div>
+                            </div>
+                            <div class="home-main__achievements-item">
+                                <div class="home-main__achievements-title">Paul & shark</div>
+                                <div class="home-main__achievements-paragraph">Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipisicing elit, sed do
+                                </div>
                             </div>
                         </div>
-                        <div class="hire__check-container hire__check-container_margin hire__check_container_row">
-                            <input type="text" placeholder="Name" class="hire__input">
-                            <input type="text" placeholder="Email" class="hire__input">
-                        </div>
-                        <button class="hire__btn btn btn_hire">Send request</button>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="burger-menu">
-    <div class="container-main">
-        <div class="top burger-menu__top">
-            <div class="top__logo">
-                <svg class="top__logo-svg"
-                     xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="30px" height="28px">
-                    <defs>
-                        <linearGradient id="PSgrad_6" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
-                            <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
-                            <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
-                        </linearGradient>
+            </section>
+            <section class="works slide ">
+                <div class="container-main">
+                    <div class="works__content">
+                        <div class="works__title">Selected work</div>
+                        <div class="works__carousel">
+                            <div class="works__circle works__prev">
+                                <img src="dist/img/works/works__arrow1.png" alt="works__arrow1">
+                            </div>
+                            <div class="works__carousel-container">
+                                <div class="works__item works__left">
+                                    <img class="works__img" src="dist/img/works/works__item1.png"
+                                         alt="works__item1">
+                                    <div class="works__item-title">victory</div>
+                                    <div class="works__paragraph">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    </div>
+                                </div>
+                                <div class="works__item works__item_active">
+                                    <img class="works__img" src="dist/img/works/works__item2.png"
+                                         alt="works__item2">
+                                    <div class="works__item-title">Metiew & Smith</div>
+                                    <div class="works__paragraph">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    </div>
+                                </div>
+                                <div class="works__item works__right">
+                                    <img class="works__img" src="dist/img/works/works__item3.png"
+                                         alt="works__item3">
+                                    <div class="works__item-title">Alex Nowak</div>
+                                    <div class="works__paragraph">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__circle works__next">
+                                <img src="dist/img/works/works__arrow2.png" alt="works__arrow2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about slide ">
+                <div class="container-main">
+                    <div class="about__content">
+                        <div class="about__title title">
+                            <div> We</div>
+                            believe in passionate people
+                        </div>
+                        <div class="about__career">
+                            career
+                            <svg class="about__career-svg"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="18px" height="14px">
+                                <defs>
+                                    <filter id="Filter_1">
+                                        <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1"
+                                                 result="floodOut"/>
+                                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
+                                                     result="compOut"/>
+                                        <feBlend mode="normal" in="compOut" in2="SourceGraphic"/>
+                                    </filter>
 
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                    <path fill="url(#PSgrad_6)"
-                          d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
-                </svg>
-                global
-            </div>
-            <svg class="top__menu"
-                 xmlns="http://www.w3.org/2000/svg"
-                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="15px" height="14px">
-                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                      d="M8.914,7.000 L14.217,12.303 C14.608,12.694 14.608,13.327 14.217,13.717 C13.827,14.108 13.194,14.108 12.803,13.717 L7.500,8.414 L2.197,13.717 C1.806,14.108 1.173,14.108 0.783,13.717 C0.392,13.327 0.392,12.694 0.783,12.303 L6.086,7.000 L0.783,1.697 C0.392,1.306 0.392,0.673 0.783,0.282 C1.173,-0.108 1.806,-0.108 2.197,0.282 L7.500,5.586 L12.803,0.282 C13.194,-0.108 13.827,-0.108 14.217,0.282 C14.608,0.673 14.608,1.306 14.217,1.697 L8.914,7.000 Z"/>
-            </svg>
+                                </defs>
+                                <g filter="url(#Filter_1)">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M10.146,1.716 C9.739,1.317 9.739,0.689 10.146,0.290 C10.553,-0.096 11.193,-0.096 11.600,0.290 L17.695,6.268 C17.884,6.453 18.000,6.710 18.000,6.995 C18.000,7.280 17.884,7.537 17.695,7.723 L11.600,13.701 C11.193,14.100 10.553,14.100 10.146,13.701 C9.739,13.302 9.739,12.674 10.146,12.274 L14.510,8.008 L1.018,8.008 C0.451,8.009 -0.000,7.552 -0.000,6.996 C-0.000,6.439 0.451,5.997 1.018,5.997 L14.509,5.997 L10.146,1.716 Z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="about__content-container">
+                            <div class="about__item">
+                                <img src="dist/img/about/about__item1.png" alt="about__item1">
+                                <div class="about__item-title">Winners</div>
+                            </div>
+                            <div class="about__item">
+                                <img src="dist/img/about/about__item2.png" alt="about__item2">
+                                <div class="about__item-title">Philosophy</div>
+                            </div>
+                            <div class="about__item">
+                                <img src="dist/img/about/about__item3.png" alt="about__item3">
+                                <div class="about__item-title">History</div>
+                            </div>
+                        </div>
+                        <img class="about__bg" src="dist/img/about/about__bg.png" alt="about__bg">
+                    </div>
+                </div>
+            </section>
+            <section class="contact slide ">
+                <div class="container-main">
+                    <div class="contact__content">
+                        <div class="contact__block">
+                            <div class="contact__info">Pawia 5,31-154 Kraków, Polanrd
+                            </div>
+                            <div class="contact__info"> ouremail@gmail.com</div>
+                            <div class="contact__info">+48 12 628 75 60</div>
+                            <button class="contact__btn btn btn_contact btn_blue"><img
+                                    src="dist/img/contact/contact__behance.png" alt="contact__behance"></button>
+                            <button class="contact__btn btn btn_contact btn_pink"><img
+                                    src="dist/img/contact/contact__dribble.png" alt="contact__dribble"></button>
+                            <button class="contact__btn btn btn_contact ">contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hire slide ">
+                <div class="container-main">
+                    <div class="hire__content">
+                        <div class="hire__title">
+                            You want us to do
+                        </div>
+                        <form class="hire__form" action="#">
+                            <div class="hire__checkbox-container">
+                                <div class="hire__check-container">
+                                    <input type="checkbox" class="hire__checkbox" id="hire__check1">
+                                    <label for="hire__check1" class="hire__check">
+                                        <svg class="hire__svg"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="20px" height="15px">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                                        </svg>
+                                        App Design</label>
+                                    <input type="checkbox" class="hire__checkbox" id="hire__check2">
+                                    <label for="hire__check2" class="hire__check">
+                                        <svg class="hire__svg"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="20px" height="15px">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                                        </svg>
+                                        Graphic Design</label>
+                                    <input type="checkbox" class="hire__checkbox" id="hire__check3">
+                                    <label for="hire__check3" class="hire__check">
+                                        <svg class="hire__svg"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="20px" height="15px">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                                        </svg>
+                                        Motion Design</label>
+                                </div>
+                                <div class="hire__check-container hire__check-container_width">
+                                    <input type="checkbox" class="hire__checkbox" id="hire__check4">
+                                    <label for="hire__check4" class="hire__check hire__check_margin">
+                                        <svg class="hire__svg"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="20px" height="15px">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                                        </svg>
+                                        UX Design</label>
+                                    <input type="checkbox" class="hire__checkbox" id="hire__check5">
+                                    <label for="hire__check5" class="hire__check">
+                                        <svg class="hire__svg"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="20px" height="15px">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                                        </svg>
+                                        Webdesign</label>
+                                    <input type="checkbox" class="hire__checkbox" id="hire__check6">
+                                    <label for="hire__check6" class="hire__check">
+                                        <svg class="hire__svg"
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             width="20px" height="15px">
+                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                  d="M18.951,2.808 L7.176,14.646 C7.073,14.750 6.905,14.750 6.801,14.646 L0.115,7.924 C0.012,7.820 0.012,7.651 0.115,7.547 L1.740,5.913 C1.844,5.809 2.012,5.809 2.115,5.913 L6.989,10.813 L16.952,0.797 C17.055,0.693 17.223,0.693 17.327,0.797 L18.951,2.430 C19.055,2.535 19.055,2.703 18.951,2.808 Z"/>
+                                        </svg>
+                                        Marketing</label>
+                                </div>
+                            </div>
+                            <div class="hire__check-container hire__check-container_margin hire__check_container_row">
+                                <input type="text" placeholder="Name" class="hire__input">
+                                <input type="text" placeholder="Email" class="hire__input">
+                            </div>
+                            <button class="hire__btn btn btn_hire">Send request</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-    <div class="container-main">
-        <div class="burger-menu__bot">
-            <div class="burger-menu__last-slide">
-                <div class="burger-menu__slide-container">
+        <div class="burger-menu">
+            <div class="container-main">
+                <div class="top">
+                    <div class="top__logo">
+                        <svg class="top__logo-svg"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             width="30px" height="28px">
+                            <defs>
+                                <linearGradient id="PSgrad_6" x1="0%" x2="5.234%" y1="99.863%" y2="0%">
+                                    <stop offset="0%" stop-color="rgb(15,51,255)" stop-opacity="1"/>
+                                    <stop offset="76%" stop-color="rgb(7,210,179)" stop-opacity="1"/>
+                                </linearGradient>
+
+                            </defs>
+                            <path fill-rule="evenodd" fill="rgb(57, 21, 87)"
+                                  d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
+                            <path fill="url(#PSgrad_6)"
+                                  d="M27.941,18.703 C26.804,18.703 25.882,17.505 25.882,16.027 L25.882,12.986 C25.882,11.508 26.804,10.309 27.941,10.309 C29.078,10.309 30.000,11.508 30.000,12.986 L30.000,16.027 C30.000,17.505 29.078,18.703 27.941,18.703 ZM21.471,22.969 C20.334,22.969 19.412,21.771 19.412,20.292 L19.412,8.706 C19.412,7.228 20.334,6.029 21.471,6.029 C22.608,6.029 23.529,7.228 23.529,8.706 L23.529,20.292 C23.529,21.771 22.608,22.969 21.471,22.969 ZM15.000,28.000 C13.861,28.000 12.938,27.077 12.938,25.937 L12.938,2.062 C12.938,0.923 13.861,-0.000 15.000,-0.000 C16.139,-0.000 17.063,0.923 17.063,2.062 L17.063,25.937 C17.063,27.077 16.139,28.000 15.000,28.000 ZM8.529,22.969 C7.392,22.969 6.471,21.771 6.471,20.292 L6.471,8.706 C6.471,7.228 7.392,6.029 8.529,6.029 C9.666,6.029 10.588,7.228 10.588,8.706 L10.588,20.292 C10.588,21.771 9.666,22.969 8.529,22.969 ZM2.059,18.703 C0.922,18.703 -0.000,17.505 -0.000,16.027 L-0.000,12.986 C-0.000,11.508 0.922,10.309 2.059,10.309 C3.196,10.309 4.118,11.508 4.118,12.986 L4.118,16.027 C4.118,17.505 3.196,18.703 2.059,18.703 Z"/>
+                        </svg>
+                        global
+                    </div>
+                    <svg class="top__menu"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         width="15px" height="14px">
+                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                              d="M8.914,7.000 L14.217,12.303 C14.608,12.694 14.608,13.327 14.217,13.717 C13.827,14.108 13.194,14.108 12.803,13.717 L7.500,8.414 L2.197,13.717 C1.806,14.108 1.173,14.108 0.783,13.717 C0.392,13.327 0.392,12.694 0.783,12.303 L6.086,7.000 L0.783,1.697 C0.392,1.306 0.392,0.673 0.783,0.282 C1.173,-0.108 1.806,-0.108 2.197,0.282 L7.500,5.586 L12.803,0.282 C13.194,-0.108 13.827,-0.108 14.217,0.282 C14.608,0.673 14.608,1.306 14.217,1.697 L8.914,7.000 Z"/>
+                    </svg>
                 </div>
             </div>
             <div class="burger-menu__nav">
