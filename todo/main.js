@@ -10,6 +10,81 @@ function onPageLoaded() {
     let svg = "<img class='todos__svg' src='img/delete.png'>";
     let svgEdit = "<img class='todos__svg_update' src='img/edit.png'>";
 
+    createItem = (value, check) => {
+        let li = document.createElement('li');
+        if (check) {
+            li.className = "checked";
+        } else {
+            li.className = "";
+        }
+        li.addEventListener("click", () => onClickTodo(li));
+        let text = document.createElement("span");
+        text.className = "todos__text";
+        text.append(value ? value : input.value);
+
+        let editBtn = document.createElement("span");
+        editBtn.className = "todos__update";
+        editBtn.innerHTML = svgEdit;
+
+        editBtn.addEventListener("click", (event) => createItemEdit(li, text.innerHTML));
+
+        let deleteBtn = document.createElement('span');
+        deleteBtn.className = "todos__delete";
+        deleteBtn.innerHTML = svg;
+        deleteBtn.addEventListener('click', () => deleteTodo(li, text.innerHTML));
+
+        ul.appendChild(li).append(text, editBtn, deleteBtn);
+    };
+
+    createItemEdit = (wrapper, value) => {
+        wrapper.innerHTML = "";
+        let oldValue = value;
+
+        const input = document.createElement('input');
+        input.value = value;
+
+        const cancelBtn = document.createElement("span");
+        cancelBtn.innerHTML = "X";
+
+        cancelBtn.addEventListener("click", () => {
+            createItem(value);
+            wrapper.remove();
+        });
+
+        const saveBtn = document.createElement("span");
+        saveBtn.innerHTML = "✔";
+
+        saveBtn.addEventListener("click", () => {
+            todoArr.forEach(value => {
+                if (value.title.toLowerCase() === input.value.toLowerCase()) {
+                    input.value = oldValue;
+                }
+            });
+
+            if (input.value.trim().length === 0 || input.value === "," || input.value === oldValue) {
+                return;
+            }
+
+            todoArr.forEach((value) => {
+                if (value.title === oldValue) {
+                    value.title = input.value;
+                    value.checked = false;
+                }
+            });
+            saveLocalStorage();
+            wrapper.remove();
+            createItem(input.value, false);
+            showAll();
+        });
+
+        wrapper.append(input, cancelBtn, saveBtn);
+    };
+
+    saveLocalStorage = () => {
+        let json = JSON.stringify(todoArr);
+        localStorage.setItem("todos", json);
+    };
+
 
     function createTodo() {
         todoArr.forEach(value => {
@@ -20,42 +95,22 @@ function onPageLoaded() {
             }
         });
 
-        if (input.value.trim().length === 0 || input.value === ",") {
+        if (!input.value.trim().length || input.value === ",") {
             return;
         }
 
-
-        let li = document.createElement('li');
-        let text = document.createElement("span");
-        text.className = "todos__text";
-        let newTodo = input.value;
-        text.append(newTodo);
-
-
-        let deleteBtn = document.createElement('span');
-        deleteBtn.className = "todos__delete";
-        deleteBtn.innerHTML = svg;
-        deleteBtn.addEventListener('click', () => deleteTodo(deleteBtn));
-
-        let updateBtn = document.createElement("span");
-        updateBtn.className = "todos__update";
-        updateBtn.innerHTML = svgEdit;
-        editTodo(updateBtn);
-
-        ul.appendChild(li).append(text, updateBtn, deleteBtn);
-        input.value = "";
-
+        createItem(input.value);
 
         todoArr.push({
-            title: newTodo,
+            title: input.value,
             checked: false
         });
 
-        let json = JSON.stringify(todoArr);
+        input.value = "";
 
         showAll();
 
-        localStorage.setItem("todos", json);
+        saveLocalStorage();
     }
 
     input.addEventListener("keypress", function (event) {
@@ -75,126 +130,43 @@ function onPageLoaded() {
         validator.classList.remove("error-active");
     });
 
-    function deleteTodo(element) {
+    function deleteTodo(element, value) {
         todoArr.forEach(function (item, index, obj) {
-            if (item.title === element.parentNode.firstElementChild.innerHTML) {
+            if (item.title === value) {
                 obj.splice(index, 1);
             }
         });
 
 
-        let json = JSON.stringify(todoArr);
-
-        localStorage.setItem("todos", json);
-        element.parentElement.remove();
+        saveLocalStorage();
+        element.remove();
     }
 
-    function editTodo(element) {
-        element.addEventListener("click", function edit(event) {
-            let editInput = document.createElement("input");
-            let oldValue = element.parentNode.firstElementChild.innerHTML;
-            editInput.value = oldValue;
-            element.parentNode.firstElementChild.innerHTML = "";
-
-            element.nextElementSibling.classList.toggle("todos__delete_display");
-            element.firstElementChild.src = "img/exit.png";
-
-            element.parentNode.firstElementChild.append(editInput);
-            element.removeEventListener("click", edit);
-            element.addEventListener('click', exitEdit);
-
-
-            function exitEdit() {
-                element.parentNode.firstElementChild.innerHTML = oldValue;
-                editInput.remove();
-                element.nextElementSibling.classList.toggle("todos__delete_display");
-                element.firstElementChild.src = "img/edit.png";
-                element.removeEventListener('click', exitEdit);
-                element.addEventListener('click', edit);
-            }
-
-            editInput.focus();
-            editInput.addEventListener("keypress", function (eventBtn) {
-                let keyEnter = 13;
-                if (eventBtn.which == keyEnter) {
-                    todoArr.forEach(value => {
-                        if (value.title.toLowerCase() === eventBtn.target.value.toLowerCase()) {
-                            eventBtn.target.value = oldValue;
-                        }
-                    });
-
-                    if (eventBtn.target.value.trim().length === 0 || eventBtn.target.value === "," || eventBtn.target.value === oldValue) {
-                        return;
-                    }
-
-
-                    element.firstElementChild.src = "img/edit.png";
-                    element.removeEventListener('click', exitEdit);
-
-                    todoArr.forEach((value, index) => {
-                        if (value.title === oldValue) {
-                            value.title = eventBtn.target.value;
-                        }
-                    });
-                    let json = JSON.stringify(todoArr);
-                    element.addEventListener('click', edit);
-                    element.nextElementSibling.classList.toggle("todos__delete_display");
-                    let newValue = eventBtn.target.value;
-                    localStorage.setItem('todos', json);
-                    element.parentNode.firstElementChild.innerHTML = newValue;
-                }
-            });
-
-        })
-    }
-
-    function onClickTodo(event) {
+    onClickTodo = wrapper => {
         if (event.target.tagName === "LI") {
             todoArr.forEach(value => {
-                if (value.title === event.target.firstElementChild.innerHTML) {
-                    value.checked = event.target.classList.toggle("checked");
+                if (value.title === wrapper.firstElementChild.innerHTML) {
+                    value.checked = wrapper.classList.toggle("checked");
                 }
             });
-            let json = JSON.stringify(todoArr);
-            localStorage.setItem("todos", json);
+            saveLocalStorage();
         }
-        if (event.target.className === "todos__text") {
+        if (event.target.className === "todos__text" || event.target.className === "todos__text full-active") {
             todoArr.forEach(value => {
-                if (value.title === event.target.innerHTML) {
-                    value.checked = event.target.parentElement.classList.toggle("checked");
+                if (value.title === wrapper.firstElementChild.innerHTML) {
+                    value.checked = wrapper.classList.toggle("checked");
                 }
             });
-            let json = JSON.stringify(todoArr);
-            localStorage.setItem("todos", json);
+            saveLocalStorage();
         }
-    }
+    };
 
     function loadTodos() {
         let data = JSON.parse(localStorage.getItem("todos"));
         if (data) {
             {
                 data.forEach((value) => {
-                    let li = document.createElement('li');
-                    let text = document.createElement("span");
-                    text.className = "todos__text";
-                    text.append(value.title);
-
-                    let deleteBtn = document.createElement('span');
-                    deleteBtn.className = "todos__delete";
-                    deleteBtn.innerHTML = svg;
-                    deleteBtn.addEventListener("click", () => deleteTodo(deleteBtn));
-
-                    let updateBtn = document.createElement("span");
-                    updateBtn.className = "todos__update";
-                    updateBtn.innerHTML = svgEdit;
-                    editTodo(updateBtn);
-
-                    ul.appendChild(li).append(text, updateBtn, deleteBtn);
-
-
-                    if (value.checked === true) {
-                        li.className = "checked";
-                    }
+                    createItem(value.title, value.checked);
 
                     todoArr.push({
                         title: value.title,
@@ -204,8 +176,6 @@ function onPageLoaded() {
             }
         }
     }
-
-    ul.addEventListener("click", onClickTodo);
 
     clearBtn.addEventListener('click', function () {
         todoArr = [];
