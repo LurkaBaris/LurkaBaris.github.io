@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  justify-content: center;
+
+  &__check {
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    margin-right: 80px;
+    background-color: #00fff2;
+    border-radius: 15px;
+    box-shadow: 0px 0px 41px 1px rgba(0, 0, 0, 0.75);
+  }
+
+  &__title {
+    padding-top: 40px;
+    margin-bottom: 20px;
+    font-family: Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__input {
+    margin-bottom: 25px;
+  }
+
+  &__result {
+    position: relative;
+    top: -100px;
+
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    background-color: #00fff2;
+    border-radius: 15px;
+    box-shadow: 0px 0px 41px 1px rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: 0.7s ease all;
+  }
+
+  &__result-active {
+    top: 0;
+    opacity: 1;
+    transition: 0.7s ease all;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
