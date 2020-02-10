@@ -12,7 +12,7 @@ window.onload = () => {
 };
 
 /*запрос*/
-let getData = (position) => {
+let  getData = (position) => {
     DarkSkyApi.apiKey = "42500ceb4860e8b97ce6298bbbca1b7d";
     DarkSkyApi.units = 'us'; // default 'us'
     DarkSkyApi.language = 'en'; // default 'en'
@@ -88,15 +88,13 @@ let checkWeather = () => {
     if (!input[0].value.trim().length || !input[1].value.trim().length) {
         return;
     }
-
     let position = {
         latitude: input[0].value,
         longitude: input[1].value
     };
 
-
-    let result = getData(position);
-    result.then(item => {
+    let resultPromise = getData(position);
+    resultPromise.then(item => {
         if (item === null) {
             createError();
             return;
