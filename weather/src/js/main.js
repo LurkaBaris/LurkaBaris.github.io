@@ -6,71 +6,85 @@ const btn = document.querySelector(".weather__submit");
 
 const result = document.querySelector(".weather__result");
 
-window.onload = function () {
+window.onload = () => {
     btn.addEventListener("click", checkWeather);
     getPosition();
-
 };
 
+/*запрос*/
+let getData = (position) => {
+    DarkSkyApi.apiKey = "42500ceb4860e8b97ce6298bbbca1b7d";
+    DarkSkyApi.units = 'us'; // default 'us'
+    DarkSkyApi.language = 'en'; // default 'en'
+    DarkSkyApi.postProcessor = (item) => { // default null;
+        item.day = item.dateTime.format('ddd');
+        return item;
+    };
+
+    return DarkSkyApi.loadCurrent(position)
+        .then(item => {
+            return item;
+        })
+        .catch(err => {
+            return null;
+        });
+};
+/*запрос*/
+
 /*оотрисовка погоды*/
-function createWeather(temp, appTemp, speed, pressure, type) {
+let createWeather = ({temperature, apparentTemperature, windSpeed, pressure, icon}) => {
     result.classList.add("weather__result-active");
     result.innerHTML = "";
 
     let imgPrecip = document.createElement("img");
-    imgPrecip.src = `dist/img/${type}.png`;
+    imgPrecip.src = `dist/img/${icon}.png`;
     result.append(imgPrecip);
 
-    let temperature = document.createElement("div");
-    temperature.className = "weather__item";
-    temperature.innerHTML = `Температура: ${temp} °F`;
-    result.append(temperature);
+    let temp = document.createElement("div");
+    temp.className = "weather__item";
+    temp.innerHTML = `Температура: ${temperature} °F`;
+    result.append(temp);
 
     let apparentTemp = document.createElement("div");
     apparentTemp.className = "weather__item";
-    apparentTemp.innerHTML = `Ощущаемая температура: ${appTemp} °F`;
+    apparentTemp.innerHTML = `Ощущаемая температура: ${apparentTemperature} °F`;
     result.append(apparentTemp);
 
-    let windSpeed = document.createElement("div");
-    windSpeed.className = "weather__item";
-    windSpeed.innerHTML = `Скорость ветра: ${speed} м/с`;
-    result.append(windSpeed);
+    let speed = document.createElement("div");
+    speed.className = "weather__item";
+    speed.innerHTML = `Скорость ветра: ${windSpeed} м/с`;
+    result.append(speed);
 
     let press = document.createElement("div");
     press.className = "weather__item";
     press.innerHTML = `Давление: ${pressure} мм рт. ст.`;
     result.append(press);
-
-}
-
+};
 /*оотрисовка погоды*/
 
 /*отрисовка ошибки*/
-function createError() {
+let createError = () => {
     result.classList.add("weather__result-active");
     result.innerHTML = "";
 
     let err = document.createElement("div");
     err.innerHTML = "Введите правильную широту и долготу!";
     result.append(err);
-}
-
+};
 /*отрисовка ошибки*/
 
 /*получение местоположения*/
-function getPosition() {
+let getPosition = () => {
     navigator.geolocation.getCurrentPosition(
         function (position) {
             input[0].value = position.coords.latitude;
             input[1].value = position.coords.longitude;
         }
     );
-}
+};
 
 /*получение местоположения*/
-
-
-function checkWeather() {
+let checkWeather = () => {
     if (!input[0].value.trim().length || !input[1].value.trim().length) {
         return;
     }
@@ -81,15 +95,15 @@ function checkWeather() {
     };
 
 
-    let result = fetchDark(DarkSkyApi, position);
-    result.then(items => {
-        if (items === null) {
+    let result = getData(position);
+    result.then(item => {
+        if (item === null) {
             createError();
             return;
         }
-        console.log(result);
-        createWeather(items.temperature, items.apparentTemperature, items.windSpeed, items.pressure,items.icon);
+        console.log(item);
+        createWeather(item);
     });
-}
+};
 
 

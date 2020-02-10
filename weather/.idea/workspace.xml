@@ -3,7 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="9511f818-95b6-428f-8235-7c752c39aa1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/fetchDark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Avenir-Black.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Avenir-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Avenir-Black.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Black.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Black.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/ProximaNova-Regular.woff" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,6 +132,7 @@
       <workItem from="1581359564518" duration="48000" />
       <workItem from="1581359899668" duration="12000" />
       <workItem from="1581359916604" duration="2000" />
+      <workItem from="1581361560140" duration="1617000" />
     </task>
     <servers />
   </component>
