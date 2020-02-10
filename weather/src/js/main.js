@@ -23,12 +23,12 @@ function createWeather(temp, appTemp, speed, pressure, type) {
 
     let temperature = document.createElement("div");
     temperature.className = "weather__item";
-    temperature.innerHTML = `Температура: ${temp} ℃`;
+    temperature.innerHTML = `Температура: ${temp} °F`;
     result.append(temperature);
 
     let apparentTemp = document.createElement("div");
     apparentTemp.className = "weather__item";
-    apparentTemp.innerHTML = `Ощущаемая температура: ${appTemp} ℃`;
+    apparentTemp.innerHTML = `Ощущаемая температура: ${appTemp} °F`;
     result.append(apparentTemp);
 
     let windSpeed = document.createElement("div");
