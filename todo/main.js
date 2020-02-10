@@ -1,14 +1,14 @@
 let todoArr = [];
 
-function onPageLoaded() {
-    let input = document.querySelector('.todo__add');
-    let ul = document.querySelector('.todos');
+window.onload = () => {
+    const input = document.querySelector('.todo__add');
+    const ul = document.querySelector('.todos');
 
-    let clearBtn = document.querySelector(".clear");
-    clearBtn.addEventListener('click', clear);
+    const clearBtn = document.querySelector(".clear");
 
-    let svg = "<img class='todos__svg' src='img/delete.png'>";
-    let svgEdit = "<img class='todos__svg_update' src='img/edit.png'>";
+
+    const img = "<img class='todos__img' src='img/delete.png'>";
+    const imgEdit = "<img class='todos__img_update' src='img/edit.png'>";
 
     createItem = (value, check) => {
         let li = document.createElement('li');
@@ -24,13 +24,13 @@ function onPageLoaded() {
 
         let editBtn = document.createElement("span");
         editBtn.className = "todos__update";
-        editBtn.innerHTML = svgEdit;
+        editBtn.innerHTML = imgEdit;
 
         editBtn.addEventListener("click", (event) => createItemEdit(li, text.innerHTML));
 
         let deleteBtn = document.createElement('span');
         deleteBtn.className = "todos__delete";
-        deleteBtn.innerHTML = svg;
+        deleteBtn.innerHTML = img;
         deleteBtn.addEventListener('click', () => deleteTodo(li, text.innerHTML));
 
         ul.appendChild(li).append(text, editBtn, deleteBtn);
@@ -44,6 +44,7 @@ function onPageLoaded() {
         input.value = value;
 
         const cancelBtn = document.createElement("span");
+        cancelBtn.className = "btn-create";
         cancelBtn.innerHTML = "X";
 
         cancelBtn.addEventListener("click", () => {
@@ -52,6 +53,7 @@ function onPageLoaded() {
         });
 
         const saveBtn = document.createElement("span");
+        saveBtn.className = "btn-create";
         saveBtn.innerHTML = "✔";
 
         saveBtn.addEventListener("click", () => {
@@ -85,8 +87,11 @@ function onPageLoaded() {
         localStorage.setItem("todos", json);
     };
 
-
-    function createTodo() {
+    createTodo = (e) => {
+        let keyEnter = 13;
+        if (e.which !== keyEnter) {
+            return;
+        }
         todoArr.forEach(value => {
             if (value.title.toLowerCase() === input.value.toLowerCase()) {
                 input.value = "";
@@ -111,36 +116,31 @@ function onPageLoaded() {
         showAll();
 
         saveLocalStorage();
-    }
+    };
 
-    input.addEventListener("keypress", function (event) {
-        let keyEnter = 13;
-        if (event.which == keyEnter) {
-            createTodo();
-        }
-    });
 
-    input.addEventListener("blur", function () {
+    input.addEventListener("keypress", () => createTodo(event));
+
+    validateExit = () => {
         let validator = document.querySelector('.error');
         validator.classList.remove("error-active");
-    });
+    };
 
-    input.addEventListener("input", function () {
-        let validator = document.querySelector('.error');
-        validator.classList.remove("error-active");
-    });
+    input.addEventListener("blur", validateExit);
 
-    function deleteTodo(element, value) {
+    input.addEventListener("input", validateExit);
+
+
+    deleteTodo = (element, value) => {
         todoArr.forEach(function (item, index, obj) {
             if (item.title === value) {
                 obj.splice(index, 1);
             }
         });
 
-
         saveLocalStorage();
         element.remove();
-    }
+    };
 
     onClickTodo = wrapper => {
         if (event.target.tagName === "LI") {
@@ -161,7 +161,7 @@ function onPageLoaded() {
         }
     };
 
-    function loadTodos() {
+    loadTodos = () => {
         let data = JSON.parse(localStorage.getItem("todos"));
         if (data) {
             {
@@ -175,9 +175,7 @@ function onPageLoaded() {
                 });
             }
         }
-    }
-
-
+    };
 
     clear = () => {
         todoArr = [];
@@ -185,8 +183,9 @@ function onPageLoaded() {
         localStorage.removeItem('todos');
     };
 
+    clearBtn.addEventListener('click', clear);
 
-    function showAll() {
+    showAll = () => {
         let span = document.createElement('span');
         span.innerHTML = "Показать полностью";
         span.className = "full";
@@ -214,11 +213,10 @@ function onPageLoaded() {
                 }
             }
         }
-    }
+    };
+
 
     loadTodos();
     showAll();
-}
+};
 
-
-document.addEventListener('DOMContentLoaded', onPageLoaded);

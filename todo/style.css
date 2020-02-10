@@ -1,4 +1,11 @@
-.todos__svg {
+body {
+    background-image: url("img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+}
+
+.todos__img {
     height: 20px;
     width: 20px;
 
@@ -9,11 +16,21 @@
     margin-left: auto;
 }
 
+.todos__delete img {
+    transition: 0.3s ease all;
+}
+
+.todos__delete:hover img {
+    transform: scale(1.2);
+    transition: 0.3s ease all;
+}
+
+
 .todos__delete_display {
     display: none;
 }
 
-.todos__svg_update {
+.todos__img_update {
     width: 13px;
     height: 13px;
 }
@@ -21,6 +38,16 @@
 .todos__update {
     cursor: pointer;
     margin-left: 5px;
+
+}
+
+.todos__update img {
+    transition: 0.3s ease all;
+}
+
+.todos__update:hover img {
+    transform: scale(1.2);
+    transition: 0.3s ease all;
 }
 
 .todo {
@@ -29,6 +56,7 @@
     margin: 0 auto;
     margin-top: 100px;
     width: 450px;
+    background-color: #ebebeb;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 0px 54px -10px rgba(0, 0, 0, 0.75);
@@ -36,15 +64,16 @@
 
 .title {
     padding: 20px 0;
-    background-color: black;
-    color: #fff;
-    text-transform: uppercase;
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 20px;
+    color: #2d2d2d;
 }
 
 .todo__form {
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
 }
 
 .error {
@@ -67,9 +96,11 @@
 }
 
 .todo__add {
+    width: 400px;
     height: 25px;
     padding: 0 11px;
     font-size: 14px;
+    font-family: Trebuchet MS, sans-serif;
     color: #061e37;
     font-weight: 600;
     border: 1px solid #061e37;
@@ -77,29 +108,48 @@
 }
 
 .todos {
-    text-align: left;
     margin-bottom: 50px;
+    font-family: Trebuchet MS, sans-serif;
+    text-align: left;
+    font-size: 17px;
 }
 
 .todos li {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    margin-bottom: 5px;
     cursor: pointer;
+}
+
+
+.todos input {
+    height: 20px;
+    padding: 0 4px;
+    font-size: 14px;
+    font-family: Trebuchet MS, sans-serif;
+    color: #061e37;
+    font-weight: 600;
+    border: 1px solid #061e37;
 }
 
 .btn {
     height: 30px;
     width: 50px;
-    background-color: black;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #000000;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
+    transition: 0.4s ease all;
 }
 
-.btn-container {
-    margin-bottom: 20px;
+.btn:hover {
+    background-color: #4a4a4a;
+    transition: 0.4s ease all;
 }
 
 .todos__text {
@@ -127,3 +177,15 @@
     white-space: normal;
 }
 
+.btn-create {
+    width: 17px;
+    margin-left: 5px;
+    text-align: center;
+    border: 1px solid #061e37;
+    transition: 0.3s ease all;
+}
+
+.btn-create:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease all;
+}
