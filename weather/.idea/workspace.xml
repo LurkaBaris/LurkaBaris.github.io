@@ -5,18 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/main.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/clear-day.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/clear-night.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/cloudy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/fog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/partly-cloudy-day.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/partly-cloudy-night.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/wind.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/fonts.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/media.scss" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +117,7 @@
       <workItem from="1581359564518" duration="48000" />
       <workItem from="1581359899668" duration="12000" />
       <workItem from="1581359916604" duration="2000" />
-      <workItem from="1581361560140" duration="7033000" />
+      <workItem from="1581361560140" duration="8042000" />
     </task>
     <servers />
   </component>

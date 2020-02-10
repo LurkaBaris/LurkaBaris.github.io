@@ -88,11 +88,13 @@ let checkWeather = () => {
     if (!input[0].value.trim().length || !input[1].value.trim().length) {
         return;
     }
+    spinnerLoad();
+
     let position = {
         latitude: input[0].value,
         longitude: input[1].value
     };
-
+    
     let resultPromise = getData(position);
     resultPromise.then(item => {
         if (item === null) {
@@ -104,4 +106,12 @@ let checkWeather = () => {
     });
 };
 
+let spinnerLoad = () => {
+    result.classList.add("weather__result-active");
+    result.innerHTML = "";
+
+    let spinner = document.createElement("div");
+    spinner.className = "loader";
+    result.append(spinner);
+};
 
