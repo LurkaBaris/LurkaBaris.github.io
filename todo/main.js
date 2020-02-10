@@ -5,7 +5,7 @@ function onPageLoaded() {
     let ul = document.querySelector('.todos');
 
     let clearBtn = document.querySelector(".clear");
-
+    clearBtn.addEventListener('click', clear);
 
     let svg = "<img class='todos__svg' src='img/delete.png'>";
     let svgEdit = "<img class='todos__svg_update' src='img/edit.png'>";
@@ -177,11 +177,13 @@ function onPageLoaded() {
         }
     }
 
-    clearBtn.addEventListener('click', function () {
+
+
+    clear = () => {
         todoArr = [];
         ul.innerHTML = "";
         localStorage.removeItem('todos');
-    });
+    };
 
 
     function showAll() {
