@@ -10,18 +10,19 @@ window.onload = () => {
     const img = "<img class='todos__img' src='img/delete.png'>";
     const imgEdit = "<img class='todos__img_update' src='img/edit.png'>";
 
-    createItem = (value, check) => {
-        let li = document.createElement('li');
+    createItem = (value, check, wrapper) => {
+        let li = wrapper ? wrapper : document.createElement('li');
+
         if (check) {
             li.className = "checked";
         } else {
             li.className = "";
         }
 
-        li.addEventListener("click", () => onClickTodo(li));
+        li.addEventListener("click", (event) => onClickTodo(li));
         let text = document.createElement("span");
         text.className = "todos__text";
-        text.append(value ? value : input.value);
+        text.append(value);
 
         let editBtn = document.createElement("span");
         editBtn.className = "todos__update";
@@ -33,50 +34,69 @@ window.onload = () => {
         deleteBtn.className = "todos__delete";
         deleteBtn.innerHTML = img;
         deleteBtn.addEventListener('click', () => deleteTodo(li, text.innerHTML));
-
-        ul.appendChild(li).append(text, editBtn, deleteBtn);
+        if (!!wrapper) {
+            wrapper.append(text, editBtn, deleteBtn);
+        } else {
+            ul.appendChild(li).append(text, editBtn, deleteBtn);
+        }
+        showAll();
     };
 
     createItemEdit = (wrapper, value) => {
+        event.stopPropagation();
+        let isCheck = wrapper.classList.contains("checked");
+
         wrapper.innerHTML = "";
-        let oldValue = value;
+
+        wrapper.addEventListener("click", (event) => onClickTodo(wrapper));
 
         const input = document.createElement('input');
         input.value = value;
+
+        input.addEventListener("blur", validateExit);
+
+        input.addEventListener("input", validateExit);
 
         const cancelBtn = document.createElement("span");
         cancelBtn.className = "btn-create";
         cancelBtn.innerHTML = "X";
 
-        cancelBtn.addEventListener("click", () => {
-            createItem(value);
-            wrapper.remove();
+        cancelBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            wrapper.innerHTML = "";
+            createItem(value, isCheck, wrapper);
         });
 
         const saveBtn = document.createElement("span");
         saveBtn.className = "btn-create";
         saveBtn.innerHTML = "✔";
 
-        saveBtn.addEventListener("click", () => {
-            todoArr.forEach(value => {
-                if (value.title.toLowerCase() === input.value.toLowerCase()) {
-                    input.value = oldValue;
+        saveBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            todoArr.forEach(item => {
+                if (item.title.toLowerCase() === input.value.toLowerCase()) {
+                    input.value = value;
+
+                    let validator = document.querySelector('.error');
+                    validator.classList.add("error-active");
                 }
             });
 
-            if (input.value.trim().length === 0 || input.value === "," || input.value === oldValue) {
+            if (input.value.trim().length === 0 || input.value === "," || input.value === value) {
                 return;
             }
 
-            todoArr.forEach((value) => {
-                if (value.title === oldValue) {
-                    value.title = input.value;
-                    value.checked = false;
+            todoArr.forEach((item) => {
+                if (item.title === value) {
+                    item.title = input.value;
+                    item.checked = isCheck;
                 }
             });
+
             saveLocalStorage();
-            wrapper.remove();
-            createItem(input.value, false);
+            wrapper.innerHTML = "";
+
+            createItem(input.value, isCheck, wrapper);
             showAll();
         });
 
@@ -93,8 +113,8 @@ window.onload = () => {
         if (e.which !== keyEnter) {
             return;
         }
-        todoArr.forEach(value => {
-            if (value.title.toLowerCase() === input.value.toLowerCase()) {
+        todoArr.forEach(item => {
+            if (item.title.toLowerCase() === input.value.toLowerCase()) {
                 input.value = "";
                 let validator = document.querySelector('.error');
                 validator.classList.add("error-active");
@@ -144,36 +164,28 @@ window.onload = () => {
     };
 
     onClickTodo = wrapper => {
-        if (event.target.tagName === "LI") {
-            todoArr.forEach(value => {
-                if (value.title === wrapper.firstElementChild.innerHTML) {
-                    value.checked = wrapper.classList.toggle("checked");
-                }
-            });
-            saveLocalStorage();
-        }
-        if (event.target.className === "todos__text" || event.target.className === "todos__text full-active") {
-            todoArr.forEach(value => {
-                if (value.title === wrapper.firstElementChild.innerHTML) {
-                    value.checked = wrapper.classList.toggle("checked");
-                }
-            });
-            saveLocalStorage();
-        }
+        todoArr.forEach(item => {
+            if (item.title === wrapper.firstElementChild.innerHTML) {
+                item.checked = !item.checked;
+            }
+        });
+        saveLocalStorage();
+        wrapper.classList.toggle("checked");
     };
 
     loadTodos = () => {
         let data = JSON.parse(localStorage.getItem("todos"));
         if (data) {
-            data.forEach((value) => {
-                createItem(value.title, value.checked);
+            data.forEach((item) => {
+                createItem(item.title, item.checked);
 
                 todoArr.push({
-                    title: value.title,
-                    checked: value.checked
+                    title: item.title,
+                    checked: item.checked
                 });
             });
         }
+        showAll();
     };
 
     clear = () => {
@@ -190,6 +202,7 @@ window.onload = () => {
         span.className = "full";
 
         span.addEventListener('click', function (event) {
+            event.stopPropagation();
             let btn = event.target;
             btn.previousElementSibling.classList.toggle("full-active");
             if (btn.previousElementSibling.classList.contains("full-active")) {
@@ -216,6 +229,5 @@ window.onload = () => {
 
 
     loadTodos();
-    showAll();
 };
 
