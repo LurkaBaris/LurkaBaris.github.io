@@ -17,6 +17,7 @@ window.onload = () => {
         } else {
             li.className = "";
         }
+
         li.addEventListener("click", () => onClickTodo(li));
         let text = document.createElement("span");
         text.className = "todos__text";
@@ -164,16 +165,14 @@ window.onload = () => {
     loadTodos = () => {
         let data = JSON.parse(localStorage.getItem("todos"));
         if (data) {
-            {
-                data.forEach((value) => {
-                    createItem(value.title, value.checked);
+            data.forEach((value) => {
+                createItem(value.title, value.checked);
 
-                    todoArr.push({
-                        title: value.title,
-                        checked: value.checked
-                    });
+                todoArr.push({
+                    title: value.title,
+                    checked: value.checked
                 });
-            }
+            });
         }
     };
 
