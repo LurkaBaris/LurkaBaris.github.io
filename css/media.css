@@ -1,0 +1,13 @@
+@media (max-width: 900px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .brief {
+        flex-direction: column;
+    }
+
+    .brief__img {
+        margin-bottom: 55px;
+    }
+}
