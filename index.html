@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-Hello
+<section class="brief">
+    <img class="brief__img" src="img/me.jpg" alt="me">
+    <div class="brief__about">
+        <div class="brief__item">
+            <span>Имя:</span> Иван Пузырев
+        </div>
+        <div class="brief__item">
+            <span>Возраст:</span> 20 лет
+        </div>
+        <div class="brief__item brief__item_display">
+            <span>То, что умею:</span>
+            <ul>
+                <li>HTML5, CSS3, SASS/LESS, Bootstrap</li>
+                <li>Адаптивная/резиновая верстка, БЭМ, Pixel Perfect</li>
+                <li>JS, Jquery, Gulp</li>
+                <li>CSS3 Анимации</li>
+                <li>Photoshop, Figma</li>
+            </ul>
+        </div>
+        <div class="brief__item brief__item_display">
+            <span>Обо мне:</span>
+            <div class="brief__about">
+                Начинающий фронтенд разработчик. Стараюсь не отставать от прогресса, регулярно повышаю квалификацию,
+                читая
+                разнообразные сайты связанные с фронтенд разработкой, просмотр/прослушивание подкастов(Юрий Бура,Yuri
+                Artyukh и.т.п.).
+                Имею представление о современном js коде.
+                Знаком с основами React. Есть огромное желание стать проффесионалом своего дела и полностью углубиться
+                во фронтенд.
+            </div>
+        </div>
+    </div>
+</section>
+<section class="portfolio">
+    <div class="portfolio__title">Мое портфолио:</div>
+    <div class="portfolio__container">
+        <div class="portfolio__item">
+            <div>1: <a href="https://lurkabaris.github.io/dsm/">DSM</a></div>
+            <div class="portfolio__about">Стандартный адаптивный landing page,
+                на странице присутсвует "js-аккордеон", вертикальная и горизонтальная карусель
+            </div>
+        </div>
+        <div class="portfolio__item">
+            <div>2: <a href="https://lurkabaris.github.io/global/">Global</a></div>
+            <div class="portfolio__about">Адаптивный landing page, c анимацей скролла и бургер меню</div>
+        </div>
+        <div class="portfolio__item">
+            <div>3: <a href="https://lurkabaris.github.io/todos/">Todo</a></div>
+            <div class="portfolio__about">"Туду" лист с возможностью удаления, редактирования тудушек, конечно же с
+                валидацией
+            </div>
+        </div>
+        <div class="portfolio__item">
+            <div>4: <a href="https://lurkabaris.github.io/weather/">Weather</a></div>
+            <div class="portfolio__about">Прогноз погоды по координатам</div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
