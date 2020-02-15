@@ -6,7 +6,7 @@
 
 .banner {
     position: relative;
-    width: 477px;
+    max-width: 477px;
     height: 215px;
     margin: 0 auto;
 }
