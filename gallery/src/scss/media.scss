@@ -1,0 +1,22 @@
+@media (max-width: 720px) {
+  .gallery__img {
+    &_big {
+      width: 100%;
+    }
+
+    &_medium {
+      width: 50%;
+    }
+
+    &_small {
+      width: 25%;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .gallery__form {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

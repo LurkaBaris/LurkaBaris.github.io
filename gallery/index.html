@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">
+    <link rel="stylesheet" href="dist/css/media.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<section class="gallery">
+    <div class="gallery__info">Json - файл: gallery-images.json</div>
+    <form class="gallery__form" action="#">
+        <div class="gallery__group">
+            <input type="text" class="gallery__input" required>
+            <span class="gallery__bar"></span>
+            <label class="gallery__label-input">URL</label>
+        </div>
+        <button class="gallery__btn">Загрузить</button>
+    </form>
+    <div class="gallery__container">
+        <div class="gallery__loader"></div>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+<script src="dist/js/bundle.js"></script>
+</body>
+</html>
