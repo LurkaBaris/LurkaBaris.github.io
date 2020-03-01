@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9511f818-95b6-428f-8235-7c752c39aa1e" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/todo" />
+  </component>
+  <component name="ProjectId" id="1Txwug4oiWAAhfKfPOSXsiUhhKm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.1" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/js/main.js" working-dir="$PROJECT_DIR$/src/js">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.main.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9511f818-95b6-428f-8235-7c752c39aa1e" name="Default Changelist" comment="" />
+      <created>1574415278880</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574415278880</updated>
+      <workItem from="1574415281602" duration="1445000" />
+      <workItem from="1574416744993" duration="395000" />
+      <workItem from="1574417166422" duration="478000" />
+      <workItem from="1574417661805" duration="97000" />
+      <workItem from="1574417775306" duration="246000" />
+      <workItem from="1574418043272" duration="1164000" />
+      <workItem from="1574424100842" duration="923000" />
+      <workItem from="1574425051112" duration="567000" />
+      <workItem from="1574425649135" duration="557000" />
+      <workItem from="1574668225380" duration="62377000" />
+      <workItem from="1574845744057" duration="14452000" />
+      <workItem from="1574860624138" duration="61000" />
+      <workItem from="1575376546010" duration="11615000" />
+      <workItem from="1575466783298" duration="14018000" />
+      <workItem from="1575554783497" duration="9990000" />
+      <workItem from="1575813273298" duration="201000" />
+      <workItem from="1575816882401" duration="24773000" />
+      <workItem from="1575924695414" duration="25031000" />
+      <workItem from="1576068214012" duration="38000" />
+      <workItem from="1576069519541" duration="16000" />
+      <workItem from="1576080357819" duration="2022000" />
+      <workItem from="1576157950350" duration="401000" />
+      <workItem from="1576159656257" duration="5439000" />
+      <workItem from="1576604364200" duration="3718000" />
+      <workItem from="1576621798976" duration="41205000" />
+      <workItem from="1577084370161" duration="17618000" />
+      <workItem from="1577164987989" duration="31027000" />
+      <workItem from="1577248844768" duration="24802000" />
+      <workItem from="1577436292213" duration="23659000" />
+      <workItem from="1577515391064" duration="17426000" />
+      <workItem from="1578489253577" duration="18138000" />
+      <workItem from="1578519527238" duration="27000" />
+      <workItem from="1578519656422" duration="11000" />
+      <workItem from="1578520053765" duration="16436000" />
+      <workItem from="1578751818638" duration="6305000" />
+      <workItem from="1578923895500" duration="13478000" />
+      <workItem from="1578953521637" duration="66067000" />
+      <workItem from="1579350260976" duration="125000" />
+      <workItem from="1579354964045" duration="613000" />
+      <workItem from="1579533880020" duration="6306000" />
+      <workItem from="1579615341636" duration="61114000" />
+      <workItem from="1579964905016" duration="4053000" />
+      <workItem from="1580072756645" duration="21000" />
+      <workItem from="1580133001184" duration="49961000" />
+      <workItem from="1580638786294" duration="3586000" />
+      <workItem from="1580991651842" duration="7235000" />
+      <workItem from="1581173046875" duration="28008000" />
+      <workItem from="1581430196483" duration="2392000" />
+      <workItem from="1582675093980" duration="59416000" />
+      <workItem from="1582883962526" duration="16361000" />
+      <workItem from="1582972365489" duration="619000" />
+      <workItem from="1582990691120" duration="672000" />
+      <workItem from="1583053701689" duration="8673000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
