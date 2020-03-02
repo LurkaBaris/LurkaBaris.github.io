@@ -19,30 +19,30 @@
       display: none;
     }
 
-    &__section_order-first {
+    &__section_xs-first {
       order: -1;
     }
 
     &__item_small-width {
-      width: 145px; /*155*/
+      width: 145px;
     }
 
-    &__item_lg-big {
-      width: 200px; /*210*/
+    &__item_xs-big {
+      width: 200px;
       height: 214px;
       overflow: auto;
     }
 
-    &__item_lg-small {
+    &__item_xs-small {
       width: 102px;
       height: 102px;
     }
 
-    &__item_order-last {
+    &__item_xs-last {
       order: 1;
     }
 
-    &__item_order-first {
+    &__item_xs-first {
       order: -1;
     }
 
