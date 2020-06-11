@@ -6,6 +6,9 @@ $font: TTNorms, sans-serif;
   box-sizing: border-box;
 }
 
+body {
+	min-width: 1282px;
+}
 
 .container-main {
   max-width: 1140px;
