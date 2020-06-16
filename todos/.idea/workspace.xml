@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8afb8a88-9112-4ce0-b90a-36cc0ce85664" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../mother/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mother/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mother/dist/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../mother/dist/css/main.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mother/dist/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mother/dist/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mother/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mother/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mother/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mother/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mother/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../mother/src/scss/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +71,7 @@
       <workItem from="1581369823558" duration="4430000" />
       <workItem from="1581443991127" duration="2461000" />
       <workItem from="1581449293298" duration="8991000" />
+      <workItem from="1592325432799" duration="874000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1579273145090</created>
