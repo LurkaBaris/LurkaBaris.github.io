@@ -1083,6 +1083,10 @@ body {
 		.popup__basket {
 			display: block;
 		}
+
+		.popup__container {
+			min-width: 780px;
+		}
 	}
 
 	&__container {
