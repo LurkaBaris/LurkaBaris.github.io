@@ -461,9 +461,17 @@ body {
 		color: #999999;
 	}
 
+	&__price {
+		font-family: $font;
+		font-size: 14px;
+		font-weight: 500;
+		color: #000;
+	}
+
 	&__composition {
 		min-width: 241px;
 		max-width: 241px;
+		margin-bottom: 5px;
 		font-family: $font;
 		font-size: 12px;
 		line-height: 16px;
@@ -1080,12 +1088,32 @@ body {
 	}
 
 	&_menu {
+		.popup__form_menu {
+			display: flex;
+		}
+
 		.popup__basket {
 			display: block;
 		}
 
 		.popup__container {
 			min-width: 780px;
+		}
+
+		.popup__total {
+			display: block;
+		}
+	}
+
+	&_call {
+		.popup__form_call {
+			display: flex;
+		}
+	}
+
+	&_faq {
+		.popup__form_faq {
+			display: flex;
 		}
 	}
 
@@ -1099,7 +1127,7 @@ body {
 	}
 
 	&__form {
-		display: flex;
+		display: none;
 		flex-direction: column;
 		align-items: center;
 	}
@@ -1159,6 +1187,8 @@ body {
 	}
 
 	&__arrow {
+		width: 11px;
+		height: 7px;
 		transition: 0.3s ease transform;
 	}
 
@@ -1231,6 +1261,39 @@ body {
 		border: 1px solid #56b01a;
 		border-radius: 50%;
 		cursor: pointer;
+	}
+
+	&__total {
+		display: none;
+		align-self: flex-start;
+		margin-bottom: 10px;
+		font-family: $font;
+		font-size: 18px;
+		font-weight: 600;
+		color: #000;
+	}
+
+	&__price {
+		color: #56b01a;
+	}
+
+	&__textarea {
+		margin-bottom: 20px;
+		width: 250px;
+		height: 120px;
+		padding: 10px 10px 10px 10px;
+		font-family: $font;
+		font-size: 16px;
+		font-weight: 500;
+		color: #000;
+		border: 1px solid #999;
+		resize: none;
+		transition: 0.3s ease border-color;
+
+		&:focus {
+			border: 1px solid #000;
+			transition: 0.3s ease border-color;
+		}
 	}
 }
 /*popup*/
