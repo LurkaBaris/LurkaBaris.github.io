@@ -419,4 +419,27 @@ window.onload = () => {
 		}
 	})
 	/*check form*/
+
+	// const request = (obj) => {
+	// 	let xhr = new XMLHttpRequest();
+	// 	xhr.open('POST', 'send.php');
+	// 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	// 	xhr.send('param=' + JSON.stringify(obj));
+	// 	xhr.onreadystatechange = function () {
+	// 		xhr.onreadystatechange = function()
+	// 		{
+	// 			if (this.readyState == 4)
+	// 			{
+	// 				if (this.status == 200)
+	// 				{
+	// 					console.log(xhr.responseText);
+	// 				}
+	// 				else
+	// 				{
+	// 					console.log('ajax error');
+	// 				}
+	// 			}
+	// 		};
+	// 	}
+	// };
 };
