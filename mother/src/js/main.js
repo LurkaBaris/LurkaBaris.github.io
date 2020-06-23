@@ -396,50 +396,92 @@ window.onload = () => {
 	const checkInput = (name, tel) => {
 		return !name.value.trim().length || !tel.value;
 	};
-	document.querySelector('.popup__form_menu').addEventListener('submit', function(e) {
-		const name = this.querySelector('.popup__input_tel');
-		const tel = this.querySelector('.popup__input_tel');
-		if (checkInput(name,tel) || total.price === 0) {
-			e.preventDefault();
-		}
-	});
-	document.querySelector('.popup__form_call').addEventListener('submit', function (e) {
-		const name = this.querySelector('.popup__input_tel');
-		const tel = this.querySelector('.popup__input_tel');
-		if (checkInput(name,tel)) {
-			e.preventDefault();
-		}
-	});
 	document.querySelector('.popup__form_faq').addEventListener('submit', function (e) {
-		const name = this.querySelector('.popup__input_tel');
+		const name = this.querySelector('.popup__input_name');
 		const tel = this.querySelector('.popup__input_tel');
 		const text = this.querySelector('.popup__textarea');
 		if (checkInput(name,tel) || !text.value.trim().length) {
 			e.preventDefault();
 		}
-	})
+	});
 	/*check form*/
 
-	// const request = (obj) => {
-	// 	let xhr = new XMLHttpRequest();
-	// 	xhr.open('POST', 'send.php');
-	// 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	// 	xhr.send('param=' + JSON.stringify(obj));
-	// 	xhr.onreadystatechange = function () {
-	// 		xhr.onreadystatechange = function()
-	// 		{
-	// 			if (this.readyState == 4)
-	// 			{
-	// 				if (this.status == 200)
-	// 				{
-	// 					console.log(xhr.responseText);
-	// 				}
-	// 				else
-	// 				{
-	// 					console.log('ajax error');
-	// 				}
-	// 			}
-	// 		};
-	// 	}
-	// };
+	/*form*/
+
+	const reload = () => {
+		document.querySelector('.popup__done').classList.add('popup__done_active');
+		setTimeout(function () {
+			location.reload();
+		}, 3500);
+	};
+	$(".popup__form_menu").submit(function (e) {
+		const client = this.querySelector('.popup__input_name');
+		const tel = this.querySelector('.popup__input_tel');
+		if (checkInput(client,tel) || total.price === 0) {
+			e.preventDefault();
+		} else {
+			total.client = this.querySelector('.popup__input_name').value;
+			total.tel = this.querySelector('.popup__input_tel').value;
+			$.ajax({
+				type: "POST",
+				url: "mail.php",
+				data: {
+					data: JSON.stringify(total),
+				},
+			}).done(function () {
+				reload();
+			});
+			return false;
+		}
+	});
+
+	$(".popup__form_call").submit(function (e) {
+		const client = this.querySelector('.popup__input_name');
+		const tel = this.querySelector('.popup__input_tel');
+		if (checkInput(client,tel)) {
+			e.preventDefault();
+		} else {
+			const objData = {
+				client: client.value,
+				tel: tel.value
+			};
+			$.ajax({
+				type: "POST",
+				url: "mail.php",
+				data: {
+					data: JSON.stringify(objData),
+				},
+			}).done(function () {
+				reload();
+			});
+			return false;
+		}
+	});
+
+	$(".popup__form_faq").submit(function (e) {
+		const client = this.querySelector('.popup__input_name');
+		const tel = this.querySelector('.popup__input_tel');
+		const text = this.querySelector('.popup__textarea');
+
+		if (checkInput(client,tel) || !text.value.trim().length) {
+			e.preventDefault();
+		} else {
+			const objData = {
+				client: client.value,
+				tel: tel.value,
+				text: text.value
+			};
+			$.ajax({
+				type: "POST",
+				url: "mail.php",
+				data: {
+					data: JSON.stringify(objData),
+				},
+			}).done(function () {
+				reload();
+			});
+			return false;
+		}
+	});
+	/*form*/
 };
