@@ -1089,6 +1089,7 @@ body {
 
 	&_menu {
 		.popup__form_menu {
+			position: relative;
 			display: flex;
 		}
 
@@ -1102,6 +1103,18 @@ body {
 
 		.popup__total {
 			display: block;
+		}
+	}
+
+	&_done {
+		.popup__container {
+			display: none;
+		}
+
+		.popup__done {
+			opacity: 1;
+			z-index: 1;
+			transition: top 0.3s ease, opacity 0.3s ease;
 		}
 	}
 
@@ -1120,6 +1133,7 @@ body {
 	&__container {
 		position: relative;
 		display: flex;
+		align-items: flex-start;
 		padding: 50px;
 		background-color: #fff;
 		max-height: 75%;
@@ -1308,11 +1322,41 @@ body {
 		box-shadow: 0px 19px 52.51px 6.49px rgba(0, 0, 0, 0.06);
 		opacity: 0;
 		z-index: -1;
+	}
+
+	&__validate {
+		position: absolute;
+		left: 0;
+		bottom: 96px;
+		max-width: 190px;
+		padding: 10px 15px;
+		font-family: $font;
+		font-weight: 500;
+		font-size: 14px;
+		color: #fff;
+		text-align: center;
+		background-color: #56b01a;
+		border-radius: 5px;
+		opacity: 0;
+		z-index: -1;
+		transition: opacity 0.3s ease;
+
+		&:after {
+			position: absolute;
+			bottom: -9px;
+			left: 10px;
+			content: "";
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 10px 10px 0 10px;
+			border-color: #56b01a transparent transparent  transparent;
+		}
 
 		&_active {
 			opacity: 1;
-			z-index: 1;
-			transition: top 0.3s ease, opacity 0.3s ease;
+			z-index: 0;
+			transition: opacity 0.3s ease;
 		}
 	}
 }

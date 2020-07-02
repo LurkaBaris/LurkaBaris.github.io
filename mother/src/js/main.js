@@ -4,6 +4,7 @@ const classesToAdd = ['popup_active', 'popup_menu'];
 const inputTel = document.querySelectorAll('.popup__input_tel');
 const popupBasket = document.querySelector('.popup__basket');
 const totalSum = document.querySelector('.popup__price');
+const validate = document.querySelector('.popup__validate');
 /*const*/
 
 /*obj product*/
@@ -41,24 +42,20 @@ const product = [
 		name: 'Супы',
 		items: [
 			{
-				name: 'Суп лапша',
-				price: 70
+				name: 'Лагман',
+				price: 140
 			},
 			{
 				name: 'Щи с говядиной',
-				price: 80
+				price: 90
 			},
 			{
 				name: 'Борщ с говядиной',
-				price: 80
-			},
-			{
-				name: 'Суп с фрикадельками',
-				price: 70
+				price: 90
 			},
 			{
 				name: 'Солянка',
-				price: 90
+				price: 100
 			},
 		]
 	},
@@ -66,12 +63,16 @@ const product = [
 		name: 'Второе блюдо',
 		items: [
 			{
+				name: 'Пельмени жаренные',
+				price: 120
+			},
+			{
 				name: 'Запеканка',
 				price: 150
 			},
 			{
 				name: 'Манты рубленые с говядиной',
-				price: 130
+				price: 150
 			}
 		]
 	},
@@ -121,7 +122,7 @@ const product = [
 			},
 			{
 				name: 'Поджарка из свинины',
-				price: 95
+				price: 110
 			},
 		]
 	},
@@ -135,6 +136,44 @@ const product = [
 			{
 				name: 'Блины с творогом',
 				price: 60
+			}
+		]
+	},
+	{
+		name: 'Выпечка',
+		items: [
+			{
+				name: 'Эчпочмак',
+				price: 45
+			},
+			{
+				name: 'Пирожок с картошкой',
+				price: 20
+			},
+			{
+				name: 'Пирожок с капустой',
+				price: 25
+			},
+			{
+				name: 'Пицца',
+				price: 45
+			},
+			{
+				name: 'Венгерка',
+				price: 30
+			}
+		]
+	},
+	{
+		name: 'Напитки',
+		items: [
+			{
+				name: 'Морс клюквенный',
+				price: 55
+			},
+			{
+				name: 'Компот',
+				price: 35
 			}
 		]
 	},
@@ -183,6 +222,7 @@ const btnValueEvent = (minus, btn, value, item) => {
 				}
 				total.price -= item.price;
 				totalSum.innerHTML = total.price + ' ₽';
+				validate.classList.remove('popup__validate_active');
 			}
 		});
 	} else {
@@ -198,6 +238,7 @@ const btnValueEvent = (minus, btn, value, item) => {
 				}
 				total.price += item.price;
 				totalSum.innerHTML = total.price + ' ₽';
+				validate.classList.remove('popup__validate_active');
 			}
 		});
 	}
@@ -407,9 +448,8 @@ window.onload = () => {
 	/*check form*/
 
 	/*form*/
-
 	const reload = () => {
-		document.querySelector('.popup__done').classList.add('popup__done_active');
+		popup.classList.add('popup_done');
 		setTimeout(function () {
 			location.reload();
 		}, 3500);
@@ -417,7 +457,14 @@ window.onload = () => {
 	$(".popup__form_menu").submit(function (e) {
 		const client = this.querySelector('.popup__input_name');
 		const tel = this.querySelector('.popup__input_tel');
-		if (checkInput(client,tel) || total.price === 0) {
+		// const validate = this.querySelector('.popup__validate');
+		if (checkInput(client,tel) || total.price === 0 || total.price < 350) {
+			if (total.price < 350) {
+				validate.classList.add('popup__validate_active');
+				this.addEventListener('focusin', (e) => {
+					validate.classList.remove('popup__validate_active');
+				});
+			}
 			e.preventDefault();
 		} else {
 			total.client = this.querySelector('.popup__input_name').value;
