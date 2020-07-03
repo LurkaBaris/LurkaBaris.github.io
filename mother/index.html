@@ -711,13 +711,21 @@
         <div class="popup__basket">
             <div class="popup__basket-title">Выберите нужные блюда</div>
         </div>
-        <form class="popup__form popup__form_menu">
-            <input class="popup__input popup__input_name" type="text" placeholder="Имя" maxlength="25" required>
-            <input class="popup__input popup__input_tel" type="tel" placeholder="Номер телефона" maxlength="11" required>
-            <div class="popup__total">Сумма заказа: <span class="popup__price">0 ₽</span></div>
-            <button class="btn btn_popup">Отправить заявку</button>
-            <div class="popup__validate">Сумма заказа должна быть больше 350 ₽!</div>
-        </form>
+        <div>
+            <form class="popup__form popup__form_menu">
+                <input class="popup__input popup__input_name" type="text" placeholder="Имя" maxlength="25" required>
+                <input class="popup__input popup__input_tel" type="tel" placeholder="Номер телефона" maxlength="11" required>
+                <div class="popup__total">Сумма заказа: <span class="popup__price">0 ₽</span></div>
+                <button class="btn btn_popup">Отправить заявку</button>
+                <div class="popup__validate">Сумма заказа должна быть больше 350 ₽!</div>
+            </form>
+            <div class="popup__sauces">
+                <div class="popup__sauces-title">Соусы к блюду:</div>
+                <div class="popup__sauces-container">
+
+                </div>
+            </div>
+        </div>
         <form class="popup__form popup__form_call" action="">
             <input class="popup__input popup__input_name" type="text" placeholder="Имя" maxlength="25" required>
             <input class="popup__input popup__input_tel" type="tel" placeholder="Номер телефона" maxlength="11" required>

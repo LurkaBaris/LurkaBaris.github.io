@@ -1091,6 +1091,8 @@ body {
 		.popup__form_menu {
 			position: relative;
 			display: flex;
+			align-items: normal;
+			margin-bottom: 20px;
 		}
 
 		.popup__basket {
@@ -1102,6 +1104,10 @@ body {
 		}
 
 		.popup__total {
+			display: block;
+		}
+
+		.popup__sauces {
 			display: block;
 		}
 	}
@@ -1357,6 +1363,127 @@ body {
 			opacity: 1;
 			z-index: 0;
 			transition: opacity 0.3s ease;
+		}
+	}
+
+	&__sauces {
+		display: none;
+	}
+
+	&__sauces-title {
+		margin-bottom: 20px;
+		font-family: $font;
+		font-weight: 600;
+		font-size: 15px;
+		color: #000;
+	}
+
+	&__sauces-container {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		max-width: 508px;
+		min-width: 508px;
+	}
+
+	&__sauces-item {
+		display: flex;
+		flex: 1 0 30%;
+		flex-grow: 0;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		border: 1px solid #56b01a;
+		border-radius: 12px;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+
+		&:nth-last-child(-n+3) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__sauces-img {
+		width: 64px;
+		height: 64px;
+		margin-bottom: 10px;
+	}
+
+	&__sauces-name {
+		margin-bottom: 10px;
+		font-family: $font;
+		font-weight: 500;
+		font-size: 13px;
+		color: #000;
+	}
+
+	&__sauces-value {
+		width: 20px;
+		text-align: center;
+		font-family: $font;
+		font-weight: 500;
+		font-size: 15px;
+		color: #000;
+	}
+
+	&__sauces-btn-container {
+		display: flex;
+		align-items: center;
+		padding: 5px;
+		border: 1px solid #56b01a;
+		border-radius: 12px;
+	}
+
+	&__sauces-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 17px;
+		height: 17px;
+		cursor: pointer;
+
+		&:after {
+			display: block;
+			content: "";
+			height: 2px;
+			width: 13px;
+			background-color: #000;
+			transition: background-color 0.3s ease;
+		}
+
+		&:hover {
+			&:after {
+				background-color: #56b01a;
+				transition: background-color 0.3s ease;
+			}
+		}
+
+		&_minus {
+			margin-right: 12px;
+		}
+
+		&_plus {
+			margin-left: 12px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				height: 13px;
+				width: 2px;
+				background-color: #000;
+				transition: background-color 0.3s ease;
+			}
+
+			&:hover {
+				&:before {
+					background-color: #56b01a;
+					transition: background-color 0.3s ease;
+				}
+			}
 		}
 	}
 }

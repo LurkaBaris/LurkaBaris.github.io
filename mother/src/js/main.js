@@ -5,6 +5,7 @@ const inputTel = document.querySelectorAll('.popup__input_tel');
 const popupBasket = document.querySelector('.popup__basket');
 const totalSum = document.querySelector('.popup__price');
 const validate = document.querySelector('.popup__validate');
+const saucesContainer = document.querySelector('.popup__sauces-container');
 /*const*/
 
 /*obj product*/
@@ -176,6 +177,38 @@ const product = [
 				price: 35
 			}
 		]
+	},
+];
+const sauces = [
+	{
+		name: 'Сметана',
+		img: 'saucesItem1.png',
+		price: 30,
+	},
+	{
+		name: 'Кетчуп',
+		img: 'saucesItem2.png',
+		price: 30,
+	},
+	{
+		name: 'Горчица',
+		img: 'saucesItem3.png',
+		price: 30,
+	},
+	{
+		name: 'Майонез',
+		img: 'saucesItem4.png',
+		price: 30,
+	},
+	{
+		name: 'Джем',
+		img: 'saucesItem5.png',
+		price: 30,
+	},
+	{
+		name: 'Сгущеное молоко',
+		img: 'saucesItem6.png',
+		price: 30,
 	},
 ];
 const total = {
@@ -360,6 +393,46 @@ const createProduct = (items) => {
 };
 /*create product in popup*/
 
+/*create sauces*/
+/*sauces btn*/
+/*sauces btn*/
+const createSauces = (items) => {
+	items.forEach((item) => {
+		const saucesItem = document.createElement('div');
+		saucesItem.className = "popup__sauces-item";
+
+		const saucesImg = document.createElement('img');
+		saucesImg.className = "popup__sauces-img";
+		saucesImg.setAttribute("src", `dist/img/popup/${item.img}`);
+
+		const saucesTitle = document.createElement('div');
+		saucesTitle.className = 'popup__sauces-name';
+		saucesTitle.innerHTML = item.name;
+
+		const saucesBtnContainer = document.createElement('div');
+		saucesBtnContainer.className = "popup__sauces-btn-container";
+
+		const btnMinus = document.createElement('div');
+		btnMinus.className = "popup__sauces-btn popup__sauces-btn_minus";
+
+
+		const saucesValue = document.createElement('div');
+		saucesValue.className = "popup__sauces-value";
+		saucesValue.innerHTML = '0';
+
+		const btnPlus = document.createElement('div');
+		btnPlus.className = "popup__sauces-btn popup__sauces-btn_plus";
+
+		btnValueEvent(true, btnMinus, saucesValue, item);
+		btnValueEvent(false, btnPlus, saucesValue, item);
+
+		saucesBtnContainer.append(btnMinus, saucesValue, btnPlus);
+		saucesItem.append(saucesImg, saucesTitle, saucesBtnContainer);
+		saucesContainer.append(saucesItem);
+	});
+};
+/*create sauces*/
+
 /*open popup basket*/
 const openBasket = () => {
 	popup.classList.add(...classesToAdd);
@@ -375,6 +448,7 @@ const openCallBack = () => {
 window.onload = () => {
 	/*init product in popup*/
 	createProduct(product);
+	createSauces(sauces);
 	/*init product in popup*/
 
 	/*init filter input*/
@@ -457,7 +531,6 @@ window.onload = () => {
 	$(".popup__form_menu").submit(function (e) {
 		const client = this.querySelector('.popup__input_name');
 		const tel = this.querySelector('.popup__input_tel');
-		// const validate = this.querySelector('.popup__validate');
 		if (checkInput(client,tel) || total.price === 0 || total.price < 350) {
 			if (total.price < 350) {
 				validate.classList.add('popup__validate_active');
