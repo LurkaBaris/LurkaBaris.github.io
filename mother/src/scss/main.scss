@@ -210,6 +210,7 @@ body {
   &__communication {
 		margin-right: 13px;
     text-align: center;
+		z-index: 2;
   }
 
   &__telephone {
@@ -219,6 +220,22 @@ body {
     font-size: 20px;
     color: #000;
   }
+
+	&__inst {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 10px;
+		font-family: $font;
+		font-weight: 500;
+		font-size: 20px;
+
+		svg {
+			margin-left: 10px;
+			width: 30px;
+			height: 30px;
+		}
+	}
 
   &__call {
     display: inline-block;
